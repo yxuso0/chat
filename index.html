@@ -2,8 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <!-- 모바일 최적화: 뷰포트를 기기 너비에 맞추고 확대/축소 허용 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>메신저 대화</title>
     <style>
         * {
@@ -19,7 +18,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 12px;
+            padding: 20px;
         }
 
         /* 수정된 chat-container에 padding 추가 */
@@ -34,73 +33,45 @@
             flex-direction: column;
             height: 95vh;
             max-height: 950px;
-            padding: 5px; /* 동서남북 5px 공백 추가 */
+            padding-top: 10px; /* 동서남북 5px 공백 추가 */
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
         .chat-header {
             background: #ffffff;
-            padding: 16px 20px;
+            padding: 18px 24px;
             border-bottom: 1px solid #e0e0e0;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             flex-shrink: 0;
-            flex-wrap: wrap;
         }
 
         .chat-header h1 {
             font-size: 20px;
             font-weight: 700;
             color: #1d2129;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            flex-wrap: wrap;
-            margin: 0;
-        }
-
-        .chat-header h1 img {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .chat-header h1 .name-block {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-
-        .chat-header h1 .name-block .name {
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .chat-header h1 .name-block .username {
-            font-size: 14px;
-            font-weight: 360;
-            color: #808080;
         }
 
         .chat-header .subtitle {
             font-size: 13px;
             color: #65676b;
             margin-left: auto;
-            white-space: nowrap;
         }
 
         .chat-messages {
             flex: 1;
             overflow-y: auto;
-            padding: 16px 16px;
+            padding: 16px 20px;
             display: flex;
             flex-direction: column;
             gap: 4px;
             background: #f8f9fa;
-            -webkit-overflow-scrolling: touch;
         }
 
+        /* 날짜 구분선 */
         .date-divider {
             display: flex;
             align-items: center;
@@ -126,10 +97,10 @@
         .message-row {
             display: flex;
             flex-direction: column;
-            max-width: 85%;
-            width: fit-content;
+            max-width: 80%;
         }
 
+        /* 수아: 좌측, 회색 말풍선 */
         .message-row.sender-sua {
             align-self: flex-start;
             align-items: flex-start;
@@ -140,6 +111,7 @@
             box-shadow: 0 1px 2px rgba(0,0,0,0.08);
         }
 
+        /* 유수: 우측, #5950F9 말풍선 */
         .message-row.sender-yu {
             align-self: flex-end;
             align-items: flex-end;
@@ -153,7 +125,6 @@
         .sender-yu .message-bubble a {
             color: #d4d9ff;
             text-decoration: none;
-            word-break: break-all;
         }
         .sender-yu .message-bubble a:hover {
             text-decoration: underline;
@@ -167,9 +138,8 @@
             font-size: 15px;
             color: #1c1e21;
             position: relative;
-            display: inline-block;
-            max-width: 100%;
-            width: fit-content;
+            display: inline-block;  /* 내용물 크기에 맞게 조정 */
+            max-width: 100%;        /* 부모 컨테이너 넘지 않도록 */
         }
 
         .message-sender {
@@ -195,39 +165,28 @@
             color: #000000;
             margin-top: 2px;
             padding: 0 6px;
-            white-space: nowrap;
         }
         .sender-yu .message-time {
             color: #000000;
         }
 
+        /* 이미지 말풍선 내부 컨테이너: 이미지 크기에 맞게 말풍선이 늘어나도록 */
         .image-placeholder {
             background: #e4e6eb;
             border-radius: 12px;
-            padding: 6px;
+            padding: 6px;          /* 여백을 줄여 이미지에 밀착 */
             border: 1px dashed #b0b3b8;
-            display: inline-block;
-            line-height: 0;
+            display: inline-block; /* 컨텐츠 크기만큼만 차지 */
+            line-height: 0;        /* 이미지 하단 여백 제거 */
             margin-top: 0;
-            max-width: 100%;
         }
 
         .image-placeholder img {
-            display: block;
-            width: auto;
+            display: block;        /* inline-block의 여백 제거 */
+            width: auto;           /* 원본 비율 유지 */
             height: auto;
-            max-width: 280px;
-            width: 100%;
-            height: auto;
+            max-width: 280px;      /* 모바일에서 너무 크지 않도록 제한 */
             border-radius: 8px;
-        }
-
-        /* story 이미지 전용 스타일 */
-        .message-row.sender-yu .message-bubble img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
         }
 
         .message-link {
@@ -240,7 +199,7 @@
         }
 
         .chat-messages::-webkit-scrollbar {
-            width: 6px;
+            width: 10px;
         }
         .chat-messages::-webkit-scrollbar-track {
             background: #e9ecef;
@@ -255,11 +214,8 @@
             background: #9aa3ad;
         }
 
-        /* 모바일 최적화: 모든 화면 크기에서 텍스트가 잘리지 않도록 유연하게 */
+        /* ===== 모바일에서도 PC 버전 크기 유지 ===== */
         @media (max-width: 600px) {
-            body {
-                padding: 0;
-            }
             .chat-container {
                 height: 100vh;
                 max-height: 100vh;
@@ -267,74 +223,32 @@
                 padding: 0;
             }
             .chat-header {
-                padding: 12px 14px;
+                padding: 14px 16px;
             }
             .chat-messages {
-                padding: 10px 12px;
+                padding: 12px 14px;
             }
             .message-row {
                 max-width: 90%;
             }
             .chat-header h1 {
-                font-size: 18px;
-            }
-            .chat-header h1 .name-block .name {
-                font-size: 18px;
-            }
-            .chat-header h1 .name-block .username {
-                font-size: 13px;
+                font-size: 20px;  /* PC 크기 유지 */
             }
             .image-placeholder img {
-                max-width: 200px;
-                width: 100%;
-                height: auto;
+                max-width: 280px;  /* PC 크기 유지 */
             }
-            .message-bubble {
-                font-size: 15px;
-                padding: 8px 12px;
+            /* 날짜, 보낸사람, 시간, 말풍선 텍스트 PC 크기 유지 */
+            .date-divider .date-text {
+                font-size: 13px;
             }
             .message-sender {
                 font-size: 13px;
             }
+            .message-bubble {
+                font-size: 15px;
+            }
             .message-time {
                 font-size: 11px;
-            }
-            .date-divider .date-text {
-                font-size: 13px;
-            }
-            .chat-header .subtitle {
-                font-size: 13px;
-            }
-            /* story 이미지 반응형 */
-            .message-row.sender-yu .message-bubble img {
-                max-width: 100%;
-                height: auto;
-            }
-            .message-row.sender-yu .message-bubble {
-                max-width: 100%;
-                overflow: hidden;
-            }
-            /* 링크가 길 경우 줄바꿈 */
-            .message-link {
-                word-break: break-all;
-                display: inline-block;
-                max-width: 100%;
-            }
-        }
-
-        /* 더 작은 화면에서도 안전 */
-        @media (max-width: 400px) {
-            .message-row {
-                max-width: 95%;
-            }
-            .image-placeholder img {
-                max-width: 160px;
-            }
-            .chat-header h1 .name-block .name {
-                font-size: 16px;
-            }
-            .chat-header h1 .name-block .username {
-                font-size: 12px;
             }
         }
     </style>
