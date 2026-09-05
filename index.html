@@ -11,6 +11,11 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+            overflow: hidden; /* 외부 스크롤 제거 */
+        }
+
         body {
             background: #e5ddd5;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -19,11 +24,9 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            /* 모바일 하단 네비게이션 바 숨김 (safe-area 대응) */
             padding-bottom: env(safe-area-inset-bottom, 0px);
         }
 
-        /* 수정된 chat-container에 padding 추가 */
         .chat-container {
             max-width: 800px;
             width: 100%;
@@ -35,7 +38,7 @@
             flex-direction: column;
             height: 95vh;
             max-height: 950px;
-            padding-top: 10px; /* 동서남북 5px 공백 추가 */
+            padding-top: 10px;
             padding-bottom: 10px;
             padding-left: 10px;
             padding-right: 10px;
@@ -71,11 +74,10 @@
             flex-direction: column;
             gap: 4px;
             background: #f8f9fa;
-            /* 하단에 3px 흰색 여백 추가 (스크롤 경계 쪽) */
-            padding-bottom: 19px; /* 기존 16px + 3px */
+            /* 하단 여백: 메시지가 잘리지 않도록 충분히 확보 */
+            padding-bottom: 20px;
         }
 
-        /* 날짜 구분선 */
         .date-divider {
             display: flex;
             align-items: center;
@@ -104,7 +106,6 @@
             max-width: 80%;
         }
 
-        /* 수아: 좌측, 회색 말풍선 */
         .message-row.sender-sua {
             align-self: flex-start;
             align-items: flex-start;
@@ -115,7 +116,6 @@
             box-shadow: 0 1px 2px rgba(0,0,0,0.08);
         }
 
-        /* 유수: 우측, #5950F9 말풍선 */
         .message-row.sender-yu {
             align-self: flex-end;
             align-items: flex-end;
@@ -142,8 +142,8 @@
             font-size: 15px;
             color: #1c1e21;
             position: relative;
-            display: inline-block;  /* 내용물 크기에 맞게 조정 */
-            max-width: 100%;        /* 부모 컨테이너 넘지 않도록 */
+            display: inline-block;
+            max-width: 100%;
         }
 
         .message-sender {
@@ -174,22 +174,21 @@
             color: #000000;
         }
 
-        /* 이미지 말풍선 내부 컨테이너: 이미지 크기에 맞게 말풍선이 늘어나도록 */
         .image-placeholder {
             background: #e4e6eb;
             border-radius: 12px;
-            padding: 6px;          /* 여백을 줄여 이미지에 밀착 */
+            padding: 6px;
             border: 1px dashed #b0b3b8;
-            display: inline-block; /* 컨텐츠 크기만큼만 차지 */
-            line-height: 0;        /* 이미지 하단 여백 제거 */
+            display: inline-block;
+            line-height: 0;
             margin-top: 0;
         }
 
         .image-placeholder img {
-            display: block;        /* inline-block의 여백 제거 */
-            width: auto;           /* 원본 비율 유지 */
+            display: block;
+            width: auto;
             height: auto;
-            max-width: 280px;      /* 모바일에서 너무 크지 않도록 제한 */
+            max-width: 280px;
             border-radius: 8px;
         }
 
@@ -218,8 +217,12 @@
             background: #9aa3ad;
         }
 
-        /* ===== 모바일에서도 PC 버전 크기 유지 & 하단 네비게이션 바 숨김 ===== */
+        /* ===== 모바일 대응 ===== */
         @media (max-width: 600px) {
+            html, body {
+                overflow: hidden;
+                height: 100%;
+            }
             .chat-container {
                 height: 100vh;
                 max-height: 100vh;
@@ -231,19 +234,18 @@
             }
             .chat-messages {
                 padding: 12px 14px;
-                /* 모바일에서도 하단 3px 추가 여백 유지 */
-                padding-bottom: 15px; /* 12px + 3px */
+                /* 하단 여백을 충분히 줘서 마지막 메시지가 잘리지 않도록 함 */
+                padding-bottom: 24px;
             }
             .message-row {
                 max-width: 90%;
             }
             .chat-header h1 {
-                font-size: 20px;  /* PC 크기 유지 */
+                font-size: 20px;
             }
             .image-placeholder img {
-                max-width: 280px;  /* PC 크기 유지 */
+                max-width: 280px;
             }
-            /* 날짜, 보낸사람, 시간, 말풍선 텍스트 PC 크기 유지 */
             .date-divider .date-text {
                 font-size: 13px;
             }
@@ -257,20 +259,15 @@
                 font-size: 11px;
             }
 
-            /* 모바일 하단 네비게이션 바 영역 숨기기 (안드로이드, iOS 대응) */
             body {
                 padding-bottom: 0;
-                /* safe-area-inset-bottom 무시 */
                 margin-bottom: 0;
-                height: 100%;
-                overflow: hidden;
             }
             .chat-container {
                 height: 100vh;
                 max-height: 100vh;
                 padding-bottom: 0;
             }
-            /* 추가로 하단에 생길 수 있는 여백 제거 */
             .chat-messages {
                 margin-bottom: 0;
             }
