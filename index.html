@@ -2,7 +2,8 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 모바일에서도 데스크톱과 동일한 레이아웃을 유지하기 위해 viewport 설정 수정 -->
+    <meta name="viewport" content="width=800, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>메신저 대화</title>
     <style>
         * {
@@ -66,7 +67,6 @@
             background: #f8f9fa;
         }
 
-        /* 날짜 구분선 */
         .date-divider {
             display: flex;
             align-items: center;
@@ -95,7 +95,6 @@
             max-width: 80%;
         }
 
-        /* 수아: 좌측, 회색 말풍선 */
         .message-row.sender-sua {
             align-self: flex-start;
             align-items: flex-start;
@@ -106,7 +105,6 @@
             box-shadow: 0 1px 2px rgba(0,0,0,0.08);
         }
 
-        /* 유수: 우측, #5950F9 말풍선 */
         .message-row.sender-yu {
             align-self: flex-end;
             align-items: flex-end;
@@ -133,8 +131,8 @@
             font-size: 15px;
             color: #1c1e21;
             position: relative;
-            display: inline-block;  /* 내용물 크기에 맞게 조정 */
-            max-width: 100%;        /* 부모 컨테이너 넘지 않도록 */
+            display: inline-block;
+            max-width: 100%;
         }
 
         .message-sender {
@@ -165,22 +163,21 @@
             color: #000000;
         }
 
-        /* 이미지 말풍선 내부 컨테이너: 이미지 크기에 맞게 말풍선이 늘어나도록 */
         .image-placeholder {
             background: #e4e6eb;
             border-radius: 12px;
-            padding: 6px;          /* 여백을 줄여 이미지에 밀착 */
+            padding: 6px;
             border: 1px dashed #b0b3b8;
-            display: inline-block; /* 컨텐츠 크기만큼만 차지 */
-            line-height: 0;        /* 이미지 하단 여백 제거 */
+            display: inline-block;
+            line-height: 0;
             margin-top: 0;
         }
 
         .image-placeholder img {
-            display: block;        /* inline-block의 여백 제거 */
-            width: auto;           /* 원본 비율 유지 */
+            display: block;
+            width: auto;
             height: auto;
-            max-width: 280px;      /* 모바일에서 너무 크지 않도록 제한 */
+            max-width: 280px;
             border-radius: 8px;
         }
 
@@ -209,7 +206,7 @@
             background: #9aa3ad;
         }
 
-        /* ===== 모바일에서도 PC 버전 크기 유지 ===== */
+        /* 모바일에서도 동일한 크기 유지 - 미디어 쿼리에서 폰트 및 크기 변경 제거 */
         @media (max-width: 600px) {
             .chat-container {
                 height: 100vh;
@@ -227,23 +224,26 @@
                 max-width: 90%;
             }
             .chat-header h1 {
-                font-size: 20px;  /* PC 크기 유지 */
+                font-size: 18px;
             }
             .image-placeholder img {
-                max-width: 280px;  /* PC 크기 유지 */
+                max-width: 200px;
             }
-            /* 날짜, 보낸사람, 시간, 말풍선 텍스트 PC 크기 유지 */
-            .date-divider .date-text {
-                font-size: 13px;
+            /* 모바일에서도 폰트 크기 유지 */
+            .message-bubble {
+                font-size: 15px;
             }
             .message-sender {
                 font-size: 13px;
             }
-            .message-bubble {
-                font-size: 15px;
-            }
             .message-time {
                 font-size: 11px;
+            }
+            .date-divider .date-text {
+                font-size: 13px;
+            }
+            .chat-header .subtitle {
+                font-size: 13px;
             }
         }
     </style>
