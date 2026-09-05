@@ -2,37 +2,46 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <!-- 모바일에서도 데스크톱과 동일한 레이아웃을 유지하기 위해 viewport 설정 수정 -->
-    <meta name="viewport" content="width=800, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 모바일에서도 데스크톱과 동일한 레이아웃 유지, 확대/축소 방지 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>메신저 대화</title>
     <style>
+        /* ===== 리셋 & 기본 ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        html, body {
+            width: 100%;
+            min-height: 100vh;
             background: #e5ddd5;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            padding: 0;
+            margin: 0;
+            /* 모바일에서 확대 방지 */
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
         }
 
         .chat-container {
-            max-width: 800px;
             width: 100%;
+            max-width: 800px;
+            height: 100vh;                /* 모바일에서 화면 꽉 차게 */
+            max-height: 100vh;
             background-color: #f0f2f5;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 0;             /* 모바일에서 둥근 모서리 제거 -> 꽉 참 */
+            box-shadow: none;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            height: 95vh;
-            max-height: 950px;
+            /* 모바일에서 확대/축소 방지 */
+            -webkit-transform: scale(1);
+            transform: scale(1);
         }
 
         .chat-header {
@@ -43,18 +52,37 @@
             align-items: center;
             gap: 12px;
             flex-shrink: 0;
+            min-height: 70px;
         }
 
         .chat-header h1 {
             font-size: 20px;
             font-weight: 700;
             color: #1d2129;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .chat-header h1 img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .chat-header h1 span {
+            font-size: 20px;
+            font-weight: 700;
+            white-space: nowrap;
         }
 
         .chat-header .subtitle {
             font-size: 13px;
             color: #65676b;
             margin-left: auto;
+            white-space: nowrap;
         }
 
         .chat-messages {
@@ -65,6 +93,7 @@
             flex-direction: column;
             gap: 4px;
             background: #f8f9fa;
+            -webkit-overflow-scrolling: touch; /* 부드러운 스크롤 */
         }
 
         .date-divider {
@@ -190,6 +219,7 @@
             text-decoration: underline;
         }
 
+        /* 스크롤바 스타일 */
         .chat-messages::-webkit-scrollbar {
             width: 10px;
         }
@@ -206,44 +236,97 @@
             background: #9aa3ad;
         }
 
-        /* 모바일에서도 동일한 크기 유지 - 미디어 쿼리에서 폰트 및 크기 변경 제거 */
+        /* ===== 모바일 전용 : 화면에 꽉 차고, 모든 요소 고정 ===== */
         @media (max-width: 600px) {
+            html, body {
+                padding: 0;
+                margin: 0;
+                background: #f0f2f5; /* 배경 통일 */
+            }
+
             .chat-container {
+                width: 100%;
                 height: 100vh;
                 max-height: 100vh;
                 border-radius: 0;
                 padding: 0;
+                box-shadow: none;
+                background-color: #f0f2f5;
+                /* 확대 방지 */
+                -webkit-transform: scale(1);
+                transform: scale(1);
             }
+
             .chat-header {
                 padding: 14px 16px;
+                min-height: 60px;
             }
+
+            .chat-header h1 {
+                font-size: 18px;
+                gap: 4px;
+            }
+            .chat-header h1 img {
+                width: 36px;
+                height: 36px;
+            }
+            .chat-header h1 span {
+                font-size: 18px;
+            }
+
             .chat-messages {
                 padding: 12px 14px;
+                gap: 4px;
             }
+
             .message-row {
                 max-width: 90%;
             }
-            .chat-header h1 {
-                font-size: 18px;
-            }
-            .image-placeholder img {
-                max-width: 200px;
-            }
-            /* 모바일에서도 폰트 크기 유지 */
+
             .message-bubble {
                 font-size: 15px;
+                padding: 10px 14px;
             }
+
             .message-sender {
                 font-size: 13px;
             }
+
             .message-time {
                 font-size: 11px;
             }
+
             .date-divider .date-text {
                 font-size: 13px;
             }
+
             .chat-header .subtitle {
                 font-size: 13px;
+            }
+
+            .image-placeholder img {
+                max-width: 200px;
+            }
+
+            /* 추가: 모든 텍스트 크기 고정, 확대 방지 */
+            .chat-header h1,
+            .chat-header .subtitle,
+            .message-bubble,
+            .message-sender,
+            .message-time,
+            .date-divider .date-text {
+                -webkit-text-size-adjust: 100% !important;
+                text-size-adjust: 100% !important;
+            }
+        }
+
+        /* 데스크톱에서도 최대 너비 유지, 높이 제한 */
+        @media (min-width: 601px) {
+            .chat-container {
+                height: 95vh;
+                max-height: 950px;
+                border-radius: 16px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             }
         }
     </style>
