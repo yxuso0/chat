@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title> </title>
+    <title>메신저 대화</title>
     <style>
         * {
             margin: 0;
@@ -209,6 +209,7 @@
             background: #9aa3ad;
         }
 
+        /* ===== 모바일에서도 PC 버전 크기 유지 ===== */
         @media (max-width: 600px) {
             .chat-container {
                 height: 100vh;
@@ -226,10 +227,23 @@
                 max-width: 90%;
             }
             .chat-header h1 {
-                font-size: 18px;
+                font-size: 20px;  /* PC 크기 유지 */
             }
             .image-placeholder img {
-                max-width: 200px;
+                max-width: 280px;  /* PC 크기 유지 */
+            }
+            /* 날짜, 보낸사람, 시간, 말풍선 텍스트 PC 크기 유지 */
+            .date-divider .date-text {
+                font-size: 13px;
+            }
+            .message-sender {
+                font-size: 13px;
+            }
+            .message-bubble {
+                font-size: 15px;
+            }
+            .message-time {
+                font-size: 11px;
             }
         }
     </style>
