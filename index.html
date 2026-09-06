@@ -1,256 +1,273 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>메신저 대화</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>메신저 대화</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
-        body {
-            background: #e5ddd5;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+html, body {
+height: 100%;
+overflow: hidden; /* body 스크롤 제거 */
+}
 
-        /* 수정된 chat-container에 padding 추가 */
-        .chat-container {
-            max-width: 800px;
-            width: 100%;
-            background-color: #f0f2f5;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 95vh;
-            max-height: 950px;
-            padding-top: 10px; /* 동서남북 5px 공백 추가 */
-            padding-bottom: 5px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
+body {
+background: #e5ddd5;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 12px; /* 모바일에서 약간의 여백, 원하면 0으로 */
+min-height: 100vh;
+height: 100%;
+}
 
-        .chat-header {
-            background: #ffffff;
-            padding: 18px 24px;
-            border-bottom: 1px solid #e0e0e0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-shrink: 0;
-        }
+.chat-container {
+max-width: 800px;
+width: 100%;
+height: 100%;
+max-height: 950px;
+background-color: #f0f2f5;
+border-radius: 16px;
+box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+display: flex;
+flex-direction: column;
+overflow: hidden; /* container 자체 스크롤 제거, 내부에서 처리 /
+padding: 10px 10px 5px 10px; / 상하좌우 패딩 유지 (하단 5px) */
+}
 
-        .chat-header h1 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1d2129;
-        }
+.chat-header {
+background: #ffffff;
+padding: 18px 24px;
+border-bottom: 1px solid #e0e0e0;
+display: flex;
+align-items: center;
+gap: 12px;
+flex-shrink: 0;
+}
 
-        .chat-header .subtitle {
-            font-size: 13px;
-            color: #65676b;
-            margin-left: auto;
-        }
+.chat-header h1 {
+font-size: 20px;
+font-weight: 700;
+color: #1d2129;
+line-height: 1.2;
+}
 
-        .chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 16px 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            background: #f8f9fa;
-        }
+.chat-header .subtitle {
+font-size: 13px;
+color: #65676b;
+margin-left: auto;
+}
 
-        /* 날짜 구분선 */
-        .date-divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 12px 0 8px 0;
-            gap: 12px;
-        }
-        .date-divider .line {
-            flex: 1;
-            height: 1px;
-            background: #d0d4d9;
-        }
-        .date-divider .date-text {
-            background: #f0f2f5;
-            padding: 0 12px;
-            font-size: 13px;
-            font-weight: 500;
-            color: #4b4f56;
-            letter-spacing: 0.3px;
-            white-space: nowrap;
-        }
+/* 메시지 영역: flex:1로 남은 높이 전부 사용, 내부 스크롤 /
+.chat-messages {
+flex: 1;
+overflow-y: auto;
+padding: 16px 20px;
+display: flex;
+flex-direction: column;
+gap: 4px;
+background: #f8f9fa;
+/ 스크롤 끝까지 여유 공간 확보를 위해 padding-bottom 추가 */
+padding-bottom: 20px;
+}
 
-        .message-row {
-            display: flex;
-            flex-direction: column;
-            max-width: 80%;
-        }
+/* 날짜 구분선 */
+.date-divider {
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 12px 0 8px 0;
+gap: 12px;
+}
+.date-divider .line {
+flex: 1;
+height: 1px;
+background: #d0d4d9;
+}
+.date-divider .date-text {
+background: #f0f2f5;
+padding: 0 12px;
+font-size: 13px;
+font-weight: 500;
+color: #4b4f56;
+letter-spacing: 0.3px;
+white-space: nowrap;
+}
 
-        /* 수아: 좌측, 회색 말풍선 */
-        .message-row.sender-sua {
-            align-self: flex-start;
-            align-items: flex-start;
-        }
-        .sender-sua .message-bubble {
-            background-color: #e9ecef;
-            border-top-left-radius: 4px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
-        }
+.message-row {
+display: flex;
+flex-direction: column;
+max-width: 80%;
+}
 
-        /* 유수: 우측, #5950F9 말풍선 */
-        .message-row.sender-yu {
-            align-self: flex-end;
-            align-items: flex-end;
-        }
-        .sender-yu .message-bubble {
-            background-color: #5950F9;
-            color: #ffffff;
-            border-top-right-radius: 4px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-        }
-        .sender-yu .message-bubble a {
-            color: #d4d9ff;
-            text-decoration: none;
-        }
-        .sender-yu .message-bubble a:hover {
-            text-decoration: underline;
-        }
+.message-row.sender-sua {
+align-self: flex-start;
+align-items: flex-start;
+}
+.sender-sua .message-bubble {
+background-color: #e9ecef;
+border-top-left-radius: 4px;
+box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
 
-        .message-bubble {
-            padding: 10px 14px;
-            border-radius: 18px;
-            word-break: break-word;
-            line-height: 1.5;
-            font-size: 15px;
-            color: #1c1e21;
-            position: relative;
-            display: inline-block;  /* 내용물 크기에 맞게 조정 */
-            max-width: 100%;        /* 부모 컨테이너 넘지 않도록 */
-        }
+.message-row.sender-yu {
+align-self: flex-end;
+align-items: flex-end;
+}
+.sender-yu .message-bubble {
+background-color: #5950F9;
+color: #ffffff;
+border-top-right-radius: 4px;
+box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+.sender-yu .message-bubble a {
+color: #d4d9ff;
+text-decoration: none;
+}
+.sender-yu .message-bubble a:hover {
+text-decoration: underline;
+}
 
-        .message-sender {
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 4px;
-            padding-left: 6px;
-            color: #1d2129;
-        }
+.message-bubble {
+padding: 10px 14px;
+border-radius: 18px;
+word-break: break-word;
+line-height: 1.5;
+font-size: 15px;
+color: #1c1e21;
+display: inline-block;
+max-width: 100%;
+}
 
-        .sender-sua .message-sender {
-            padding-right: 6px;
-            text-align: left;
-        }
-        .sender-yu .message-sender {
-            text-align: right;
-            padding-right: 6px;
-            color: #2b2b2b;
-        }
+.message-sender {
+font-size: 13px;
+font-weight: 600;
+margin-bottom: 4px;
+padding-left: 6px;
+color: #1d2129;
+}
 
-        .message-time {
-            font-size: 11px;
-            color: #000000;
-            margin-top: 2px;
-            padding: 0 6px;
-        }
-        .sender-yu .message-time {
-            color: #000000;
-        }
+.sender-sua .message-sender {
+padding-right: 6px;
+text-align: left;
+}
+.sender-yu .message-sender {
+text-align: right;
+padding-right: 6px;
+color: #2b2b2b;
+}
 
-        /* 이미지 말풍선 내부 컨테이너: 이미지 크기에 맞게 말풍선이 늘어나도록 */
-        .image-placeholder {
-            background: #e4e6eb;
-            border-radius: 12px;
-            padding: 6px;          /* 여백을 줄여 이미지에 밀착 */
-            border: 1px dashed #b0b3b8;
-            display: inline-block; /* 컨텐츠 크기만큼만 차지 */
-            line-height: 0;        /* 이미지 하단 여백 제거 */
-            margin-top: 0;
-        }
+.message-time {
+font-size: 11px;
+color: #000000;
+margin-top: 2px;
+padding: 0 6px;
+}
+.sender-yu .message-time {
+color: #000000;
+}
 
-        .image-placeholder img {
-            display: block;        /* inline-block의 여백 제거 */
-            width: auto;           /* 원본 비율 유지 */
-            height: auto;
-            max-width: 280px;      /* 모바일에서 너무 크지 않도록 제한 */
-            border-radius: 8px;
-        }
+.image-placeholder {
+background: #e4e6eb;
+border-radius: 12px;
+padding: 6px;
+border: 1px dashed #b0b3b8;
+display: inline-block;
+line-height: 0;
+margin-top: 0;
+}
 
-        .message-link {
-            color: #385898;
-            text-decoration: none;
-            word-break: break-all;
-        }
-        .message-link:hover {
-            text-decoration: underline;
-        }
+.image-placeholder img {
+display: block;
+width: auto;
+height: auto;
+max-width: 280px;
+border-radius: 8px;
+}
 
-        .chat-messages::-webkit-scrollbar {
-            width: 10px;
-        }
-        .chat-messages::-webkit-scrollbar-track {
-            background: #e9ecef;
-            border-radius: 10px;
-        }
-        .chat-messages::-webkit-scrollbar-thumb {
-            background: #b0b8c1;
-            border-radius: 10px;
-            border: 2px solid #f8f9fa;
-        }
-        .chat-messages::-webkit-scrollbar-thumb:hover {
-            background: #9aa3ad;
-        }
+.message-link {
+color: #385898;
+text-decoration: none;
+word-break: break-all;
+}
+.message-link:hover {
+text-decoration: underline;
+}
 
-        /* ===== 모바일에서도 PC 버전 크기 유지 ===== */
-        @media (max-width: 600px) {
-            .chat-container {
-                height: 100vh;
-                max-height: 100vh;
-                border-radius: 0;
-                padding: 0;
-            }
-            .chat-header {
-                padding: 14px 16px;
-            }
-            .chat-messages {
-                padding: 12px 14px;
-            }
-            .message-row {
-                max-width: 90%;
-            }
-            .chat-header h1 {
-                font-size: 20px;  /* PC 크기 유지 */
-            }
-            .image-placeholder img {
-                max-width: 280px;  /* PC 크기 유지 */
-            }
-            /* 날짜, 보낸사람, 시간, 말풍선 텍스트 PC 크기 유지 */
-            .date-divider .date-text {
-                font-size: 13px;
-            }
-            .message-sender {
-                font-size: 13px;
-            }
-            .message-bubble {
-                font-size: 15px;
-            }
-            .message-time {
-                font-size: 11px;
-            }
-        }
+/* 스크롤바 스타일 */
+.chat-messages::-webkit-scrollbar {
+width: 10px;
+}
+.chat-messages::-webkit-scrollbar-track {
+background: #e9ecef;
+border-radius: 10px;
+}
+.chat-messages::-webkit-scrollbar-thumb {
+background: #b0b8c1;
+border-radius: 10px;
+border: 2px solid #f8f9fa;
+}
+.chat-messages::-webkit-scrollbar-thumb:hover {
+background: #9aa3ad;
+}
+
+/* 모바일: 전체 화면 사용, 내부 스크롤만 /
+@media (max-width: 600px) {
+body {
+padding: 0;
+align-items: stretch; / 높이를 채우도록 /
+}
+.chat-container {
+max-height: 100vh;
+height: 100vh;
+border-radius: 0;
+padding: 8px 8px 4px 8px; / 여백 줄임 /
+}
+.chat-header {
+padding: 14px 16px;
+}
+.chat-messages {
+padding: 12px 14px 20px 14px; / 하단 패딩 충분히 */
+}
+.message-row {
+max-width: 90%;
+}
+.chat-header h1 {
+font-size: 20px;
+}
+.image-placeholder img {
+max-width: 280px;
+}
+.date-divider .date-text {
+font-size: 13px;
+}
+.message-sender {
+font-size: 13px;
+}
+.message-bubble {
+font-size: 15px;
+}
+.message-time {
+font-size: 11px;
+}
+}
+
+/* 600px 이하에서도 chat-container 패딩 안정화 /
+@media (max-width: 600px) {
+.chat-container {
+padding: 6px 6px 2px 6px;
+}
+.chat-messages {
+padding-bottom: 24px; / 하단 여유 추가 */
+}
+}
+</style>
     </style>
 </head>
 <body>
