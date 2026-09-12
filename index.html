@@ -21,7 +21,6 @@
             padding: 20px;
         }
 
-        /* 수정된 chat-container에 padding 추가 */
         .chat-container {
             max-width: 800px;
             width: 100%;
@@ -33,7 +32,7 @@
             flex-direction: column;
             height: 95vh;
             max-height: 950px;
-            padding-top: 10px; /* 동서남북 5px 공백 추가 */
+            padding-top: 10px;
             padding-bottom: 5px;
             padding-left: 10px;
             padding-right: 10px;
@@ -71,7 +70,6 @@
             background: #f8f9fa;
         }
 
-        /* 날짜 구분선 */
         .date-divider {
             display: flex;
             align-items: center;
@@ -100,7 +98,6 @@
             max-width: 80%;
         }
 
-        /* 수아: 좌측, 회색 말풍선 */
         .message-row.sender-sua {
             align-self: flex-start;
             align-items: flex-start;
@@ -111,7 +108,6 @@
             box-shadow: 0 1px 2px rgba(0,0,0,0.08);
         }
 
-        /* 유수: 우측, #5950F9 말풍선 */
         .message-row.sender-yu {
             align-self: flex-end;
             align-items: flex-end;
@@ -138,8 +134,8 @@
             font-size: 15px;
             color: #1c1e21;
             position: relative;
-            display: inline-block;  /* 내용물 크기에 맞게 조정 */
-            max-width: 100%;        /* 부모 컨테이너 넘지 않도록 */
+            display: inline-block;
+            max-width: 100%;
         }
 
         .message-sender {
@@ -170,22 +166,21 @@
             color: #000000;
         }
 
-        /* 이미지 말풍선 내부 컨테이너: 이미지 크기에 맞게 말풍선이 늘어나도록 */
         .image-placeholder {
             background: #e4e6eb;
             border-radius: 12px;
-            padding: 6px;          /* 여백을 줄여 이미지에 밀착 */
+            padding: 6px;
             border: 1px dashed #b0b3b8;
-            display: inline-block; /* 컨텐츠 크기만큼만 차지 */
-            line-height: 0;        /* 이미지 하단 여백 제거 */
+            display: inline-block;
+            line-height: 0;
             margin-top: 0;
         }
 
         .image-placeholder img {
-            display: block;        /* inline-block의 여백 제거 */
-            width: auto;           /* 원본 비율 유지 */
+            display: block;
+            width: auto;
             height: auto;
-            max-width: 280px;      /* 모바일에서 너무 크지 않도록 제한 */
+            max-width: 280px;
             border-radius: 8px;
         }
 
@@ -214,7 +209,6 @@
             background: #9aa3ad;
         }
 
-        /* ===== 모바일에서도 PC 버전 크기 유지 ===== */
         @media (max-width: 600px) {
             .chat-container {
                 height: 100vh;
@@ -232,12 +226,11 @@
                 max-width: 90%;
             }
             .chat-header h1 {
-                font-size: 20px;  /* PC 크기 유지 */
+                font-size: 20px;
             }
             .image-placeholder img {
-                max-width: 280px;  /* PC 크기 유지 */
+                max-width: 280px;
             }
-            /* 날짜, 보낸사람, 시간, 말풍선 텍스트 PC 크기 유지 */
             .date-divider .date-text {
                 font-size: 13px;
             }
@@ -307,15 +300,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아니 뭐야 그럼</div>
-            <div class="message-time">오후 11:06</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">첫 직관인데 이긴거야?</div>
-            <div class="message-time">오후 11:06</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">미쳣네</div>
             <div class="message-time">오후 11:06</div>
         </div>
@@ -324,10 +315,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그러니깤ㅋㅋ 2회때 경기 시작한지 얼마 되지도 않았는데</div>
-            <div class="message-time">오후 11:08</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">심우준 투런홈런 쳤을때 많이 식겁했는데 금방 따라잡을 줄은 몰랐지 ㅋㅋㅋㅋㅋ</div>
             <div class="message-time">오후 11:08</div>
         </div>
@@ -371,10 +361,10 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그래도 1년이면 오래된 것 같은데...?</div>
-            <div class="message-time">오후 11:22</div>
+            <div class="message-time"></div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">유니폼도 샀어?</div>
             <div class="message-time">오후 11:22</div>
         </div>
@@ -397,10 +387,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">선수유니폼?! 난 그거 사고싶은데 그게 너무너무너무너무 비싸</div>
-            <div class="message-time">오후 11:39</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">더 보다가 사려고 ㅎㅎ</div>
             <div class="message-time">오후 11:39</div>
         </div>
@@ -418,20 +407,17 @@
             <div class="message-bubble">
                 <div class="image-placeholder"><img src="uniform.jpg" alt="uniform"></div>
             </div>
-            <div class="message-time">오후 11:43</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">흠 그 뭐라고 해야하지ㅣ</div>
-            <div class="message-time">오후 11:43</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">저건데 그 아무것도 없ㄴ느 거 말고</div>
-            <div class="message-time">오후 11:44</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">선수들이 입는 유니폼ㅁ</div>
             <div class="message-time">오후 11:44</div>
         </div>
@@ -440,15 +426,13 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">뭔지 알아</div>
-            <div class="message-time">오후 11:45</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">나도 선수 유니폼 말한거였어</div>
-            <div class="message-time">오후 11:45</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">기회되면 안현민 유니폼으로 사고싶은데 돈이 없어서 ㅎ</div>
             <div class="message-time">오후 11:45</div>
         </div>
@@ -499,10 +483,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">안현민 후반기 들어서서는 타격 많이 부진하길래 걱정 많이 됐는데</div>
-            <div class="message-time">오후 11:53</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">어제 NC전 보니까 극복한거 같더라</div>
             <div class="message-time">오후 11:53</div>
         </div>
@@ -518,10 +501,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">챙겨보진 않아ㅜㅋㅋㄱㅋㄱㄱㅋ</div>
-            <div class="message-time">오후 11:58</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그냥 ㅎㅎㅎㅎㅎㅎ</div>
             <div class="message-time">오후 11:58</div>
         </div>
@@ -572,10 +554,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">응...ㅎ</div>
-            <div class="message-time">오전 12:07</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">갈때도 버스타고, 올때도 버스타고</div>
             <div class="message-time">오전 12:07</div>
         </div>
@@ -594,14 +575,13 @@
             <div class="message-time">오전 12:09</div>
         </div>
 
-        <!-- 신유수 00:10 (3개) -->
+        <!-- 신유수 00:10 (2개) -->
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">팔달구랑 광교, 수원역 가는 버스가 사람 많이 타더라</div>
-            <div class="message-time">오전 12:10</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">난 호매실 가는 버스 타고.. 호매실 가는 길에 중간에 내려서 10분? 정도만 걸어가면 집 도착하니까</div>
             <div class="message-time">오전 12:10</div>
         </div>
@@ -631,15 +611,13 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">에이 ㅋㅋ 아니지</div>
-            <div class="message-time">오전 12:40</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">친구들이랑 처음 야구장 갔을때야 응원하는 구단도 없고, 규칙도 몰랐으니까 있으나 마나 였던거지</div>
-            <div class="message-time">오전 12:40</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">오늘 직관은 진짜 재밌었어 ㅋㅋㅋㅋ</div>
             <div class="message-time">오전 12:40</div>
         </div>
@@ -648,10 +626,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">워페도 함 가봐</div>
-            <div class="message-time">오전 12:44</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">더 재밌어</div>
             <div class="message-time">오전 12:44</div>
         </div>
@@ -660,10 +637,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그니까 재밌어보이긴 하더라</div>
-            <div class="message-time">오전 12:45</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">근데 워페는 홈석이라</div>
             <div class="message-time">오전 12:45</div>
         </div>
@@ -679,10 +655,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그건 맞긴해ㅜㅠ</div>
-            <div class="message-time">오전 12:48</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그래더 한 번은 가봐</div>
             <div class="message-time">오전 12:48</div>
         </div>
@@ -691,10 +666,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그래야겠다 포수 뒤에 구역은 가끔 바람타서 물방울 오긴 오는데</div>
-            <div class="message-time">오전 12:49</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그래도 덥긴 덥더라</div>
             <div class="message-time">오전 12:49</div>
         </div>
@@ -717,15 +691,13 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 그래..?? ㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오전 1:00</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">난 가서 땀 계속 흘려서 너무 시원할거 같던데</div>
-            <div class="message-time">오전 1:00</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">오늘 날씨가 많이 뜨거웠으니까</div>
             <div class="message-time">오전 1:00</div>
         </div>
@@ -755,15 +727,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">경기는 못봤는데</div>
-            <div class="message-time">오전 11:36</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">릴스로 보ㅓㅆ어</div>
-            <div class="message-time">오전 11:36</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">ㄹㅈㄷ네 ㅜ</div>
             <div class="message-time">오전 11:36</div>
         </div>
@@ -828,15 +798,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">놉ㅂ</div>
-            <div class="message-time">오후 3:34</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">아 이번엔 스카이석갔고</div>
-            <div class="message-time">오후 3:34</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">저번엔 응원지정석 갔엇어</div>
             <div class="message-time">오후 3:34</div>
         </div>
@@ -873,10 +841,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">내가 좋아하기 시작했을때는 가을야구를 안 갔어서.. 그건 잘 …….,</div>
-            <div class="message-time">오후 3:45</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">근데 아마 케이티도 팬이 별로없어서 응지는 아니더라더 스카이는 갈 수 있을걸ㄹ</div>
             <div class="message-time">오후 3:45</div>
         </div>
@@ -899,15 +866,13 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아</div>
-            <div class="message-time">오후 3:52</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">아아...</div>
-            <div class="message-time">오후 3:52</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">맞다 그랬었구나..</div>
             <div class="message-time">오후 3:52</div>
         </div>
@@ -930,15 +895,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">에이</div>
-            <div class="message-time">오후 4:10</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">이번엔</div>
-            <div class="message-time">오후 4:10</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">ㄹㅇ 기대해도돼</div>
             <div class="message-time">오후 4:10</div>
         </div>
@@ -968,10 +931,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">방금 어ㅏㅆ어 ㅋㅋㅋ</div>
-            <div class="message-time">오후 1:43</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">너도 일본??</div>
             <div class="message-time">오후 1:43</div>
         </div>
@@ -1001,10 +963,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">휴가철이라</div>
-            <div class="message-time">오후 1:45</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그런가?ㅜ</div>
             <div class="message-time">오후 1:45</div>
         </div>
@@ -1013,10 +974,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그런가봐</div>
-            <div class="message-time">오후 1:46</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">난 가게 되면 12월이나 내년 1월달에나 갈거 같은데</div>
             <div class="message-time">오후 1:46</div>
         </div>
@@ -1025,10 +985,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">근데</div>
-            <div class="message-time">오후 2:50</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그때가 ㄹㅇ 좋아</div>
             <div class="message-time">오후 2:50</div>
         </div>
@@ -1040,19 +999,17 @@
             <div class="message-time">오후 2:58</div>
         </div>
 
-        <!-- 수아 15:14 (4개) -->
+        <!-- 수아 15:14 (3개) -->
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">맞아</div>
-            <div class="message-time">오후 3:14</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그때<br> 날씨가 ㄹㅇ</div>
-            <div class="message-time">오후 3:14</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">젛아 여기 너무더워 지금</div>
             <div class="message-time">오후 3:14</div>
         </div>
@@ -1068,37 +1025,32 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">여긴 슬슬 날 풀리고 바람도 좀 부는데</div>
-            <div class="message-time">오후 3:15</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그래서 야구도 어제 경기 다시 재개했잖아</div>
             <div class="message-time">오후 3:15</div>
         </div>
 
-        <!-- 수아 15:15 (6개) -->
+        <!-- 수아 15:15 (5개) -->
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아니 나 8웡 7일에</div>
-            <div class="message-time">오후 3:15</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">응원석</div>
-            <div class="message-time">오후 3:15</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">예매했었는데</div>
-            <div class="message-time">오후 3:15</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">취소됐었어 ㅆ</div>
-            <div class="message-time">오후 3:15</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">내가 어케 잡은 자리인데ㅜㅜㅠ</div>
             <div class="message-time">오후 3:15</div>
         </div>
@@ -1121,15 +1073,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">흠</div>
-            <div class="message-time">오후 3:21</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">아 그 어디지</div>
-            <div class="message-time">오후 3:21</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">롯데였나 ㅎㅎ</div>
             <div class="message-time">오후 3:21</div>
         </div>
@@ -1138,15 +1088,13 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">맞네 롯데네</div>
-            <div class="message-time">오후 3:22</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">와 근데</div>
-            <div class="message-time">오후 3:22</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">어제 경기가 진짜 야구 입문하고 본 크트 경기 중에 제일 재미있더라...</div>
             <div class="message-time">오후 3:22</div>
         </div>
@@ -1155,10 +1103,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">왜??????</div>
-            <div class="message-time">오후 3:49</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">어제ㅜ뭐했는데??</div>
             <div class="message-time">오후 3:49</div>
         </div>
@@ -1167,10 +1114,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">엔씨 선발투수로 라일리 나왔는데 제구가 스트라이크존 바깥쪽에만 계속 붙더라고 그래서 크트 선수들 삼진만 당하다가</div>
-            <div class="message-time">오후 3:50</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">1회때 3실점 먹혀서 질 것 같았는데 김현수가 4회때 솔로홈런으로 1점 얻어주고</div>
             <div class="message-time">오후 3:51</div>
         </div>
@@ -1186,10 +1132,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">엥 찐이야? 미쳣네 ㅋㅋ</div>
-            <div class="message-time">오후 5:48</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">케이티 가을야구 확정이다</div>
             <div class="message-time">오후 5:48</div>
         </div>
@@ -1198,15 +1143,13 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아</div>
-            <div class="message-time">오후 5:48</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">아 근데</div>
-            <div class="message-time">오후 5:48</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">아시안 게임때 우천취소 된 경기들이랑 폭염으로 연기 된 경기들 할텐데</div>
             <div class="message-time">오후 5:49</div>
         </div>
@@ -1218,19 +1161,17 @@
             <div class="message-time">오후 5:49</div>
         </div>
 
-        <!-- 수아 17:49 (4개) -->
+        <!-- 수아 17:49 (3개) -->
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">에이<br> ㅋ</div>
-            <div class="message-time">오후 5:49</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">설마 그런다고</div>
-            <div class="message-time">오후 5:49</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">지겠어?ㅜ</div>
             <div class="message-time">오후 5:49</div>
         </div>
@@ -1281,25 +1222,21 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아니</div>
-            <div class="message-time">오후 6:09</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그래?ㅜ</div>
-            <div class="message-time">오후 6:09</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">나 요즘</div>
-            <div class="message-time">오후 6:09</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">야구를</div>
-            <div class="message-time">오후 6:09</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">안봐섴ㅋㅋㅋ</div>
             <div class="message-time">오후 6:09</div>
         </div>
@@ -1343,10 +1280,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아 ㅎㅎㅎㅎㅎㅎ 근데 ㄹㅇ 7시 경기야!</div>
-            <div class="message-time">오후 8:14</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">?</div>
             <div class="message-time">오후 8:14</div>
         </div>
@@ -1355,10 +1291,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">어! 맞아</div>
-            <div class="message-time">오후 8:14</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">어제부터 7시에 시작하던데</div>
             <div class="message-time">오후 8:15</div>
         </div>
@@ -1367,10 +1302,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그럼 몇시에 끝나.!</div>
-            <div class="message-time">오후 8:15</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">?</div>
             <div class="message-time">오후 8:15</div>
         </div>
@@ -1386,25 +1320,21 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">뭐야</div>
-            <div class="message-time">오후 9:28</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">생각보다</div>
-            <div class="message-time">오후 9:28</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">비슷하네 ㅎㅎ</div>
-            <div class="message-time">오후 9:28</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">아 30분</div>
-            <div class="message-time">오후 9:28</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">차이구나 ㅋㅋㅋㅋ</div>
             <div class="message-time">오후 9:28</div>
         </div>
@@ -1434,10 +1364,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아ㅏ 맞아</div>
-            <div class="message-time">오후 10:08</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">실습할때 입는 가운 ㅎㅎ</div>
             <div class="message-time">오후 10:08</div>
         </div>
@@ -1453,10 +1382,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아 내가 첨 올렷나 ㅋㅌㅌㅌㅋ</div>
-            <div class="message-time">오후 10:30</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">맞아</div>
             <div class="message-time">오후 10:30</div>
         </div>
@@ -1472,15 +1400,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아</div>
-            <div class="message-time">오후 10:46</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">지금생각해보니</div>
-            <div class="message-time">오후 10:46</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">진짜 한번도 안 올렷넼ㅋㅋ</div>
             <div class="message-time">오후 10:46</div>
         </div>
@@ -1489,37 +1415,32 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">뭐야 ㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 10:55</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">보건계열이면</div>
-            <div class="message-time">오후 10:55</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">혹시 치위생과야?</div>
             <div class="message-time">오후 10:55</div>
         </div>
 
-        <!-- 수아 23:02 (5개) -->
+        <!-- 수아 23:02 (4개) -->
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">????</div>
-            <div class="message-time">오후 11:02</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">뭐야</div>
-            <div class="message-time">오후 11:02</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">진짜 어케 알았어</div>
-            <div class="message-time">오후 11:02</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">너만 맞춤</div>
             <div class="message-time">오후 11:02</div>
         </div>
@@ -1555,11 +1476,10 @@
         <!-- 수아 23:13 (2개) -->
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
-            <div class="message-bubble">ㅆㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 11:13</div>
+            <div class="message-bubble">ㅆㅋㅋㅋㅋㅋㅋㅋㅋ</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">이미 아는줄 ㅜ</div>
             <div class="message-time">오후 11:13</div>
         </div>
@@ -1568,10 +1488,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">대학교 스토리 한번도 올린적 없다며 ㅋㅋㅋ 내가 어떻게 이미 알겠어</div>
-            <div class="message-time">오후 11:15</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">보건계열이면 보건대로 간건가?</div>
             <div class="message-time">오후 11:15</div>
         </div>
@@ -1580,10 +1499,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">맞지 ㅋ</div>
-            <div class="message-time">오후 11:16</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">또 맞추는 거 아니냐</div>
             <div class="message-time">오후 11:16</div>
         </div>
@@ -1592,10 +1510,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">....</div>
-            <div class="message-time">오후 11:16</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">동남보건대야...?</div>
             <div class="message-time">오후 11:16</div>
         </div>
@@ -1604,15 +1521,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">…..?</div>
-            <div class="message-time">오후 11:19</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">이거 찐이야?</div>
-            <div class="message-time">오후 11:19</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">뭐야 진짜</div>
             <div class="message-time">오후 11:19</div>
         </div>
@@ -1628,20 +1543,17 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아</div>
-            <div class="message-time">오후 11:23</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그래?</div>
-            <div class="message-time">오후 11:23</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">ㅎㅎㅎㅎ</div>
-            <div class="message-time">오후 11:23</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">ㅋㅋㄱㅋㄱㅋㄱㅋㅋ</div>
             <div class="message-time">오후 11:23</div>
         </div>
@@ -1650,10 +1562,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">동남보건대 보건계열 입결 높았을텐데 부럽다</div>
-            <div class="message-time">오후 11:24</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">난 광탈했는데</div>
             <div class="message-time">오후 11:24</div>
         </div>
@@ -1683,10 +1594,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">치기공 넣어서 예비번호 312번 받고 광탈했어</div>
-            <div class="message-time">오후 11:30</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">예비번호 한 명도 안빠지던데</div>
             <div class="message-time">오후 11:30</div>
         </div>
@@ -1695,10 +1605,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">뭐야 치기지원했었어???</div>
-            <div class="message-time">오후 11:31</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">지금 어디갔어</div>
             <div class="message-time">오후 11:31</div>
         </div>
@@ -1710,15 +1619,9 @@
             <div class="message-time">오후 11:31</div>
         </div>
 
-        <!-- 신유수 23:32 (2개) -->
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
-            <div class="message-bubble">25년도 입결보고 0. 몇 상향이길래 넣었는데 택도 없더라</div>
-            <div class="message-time">오후 11:32</div>
-        </div>
-        <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
-            <div class="message-bubble">25년도 입결보고 내신 0. 몇 상향이길래 넣었는데 택도 없더라 (edited)</div>
+            <div class="message-sender"></div>
+            <div class="message-bubble">25년도 입결보고 내신 0. 몇 상향이길래 넣었는데 택도 없더라</div>
             <div class="message-time">오후 11:32</div>
         </div>
 
@@ -1726,10 +1629,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아니 치기 그케 인기 많았어???</div>
-            <div class="message-time">오후 11:33</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">뭐야</div>
             <div class="message-time">오후 11:33</div>
         </div>
@@ -1745,10 +1647,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">근데 좀 너무하긴 했어..</div>
-            <div class="message-time">오후 11:35</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">20년도부터 가면 갈 수록 입결 낮아지는 추세였는데....</div>
             <div class="message-time">오후 11:35</div>
         </div>
@@ -1757,10 +1658,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">다른과도 지원해보지</div>
-            <div class="message-time">오후 11:35</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">안광과잉가</div>
             <div class="message-time">오후 11:36</div>
         </div>
@@ -1776,10 +1676,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">안경광학과?</div>
-            <div class="message-time">오후 11:36</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">거기도 꽤 높았던거 같은데</div>
             <div class="message-time">오후 11:36</div>
         </div>
@@ -1795,10 +1694,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">치기공과도 예비 300번대 받을만 했구나.. 4.38이었으면...</div>
-            <div class="message-time">오후 11:38</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">1년만에 어떻게 2등급이나 높아지지</div>
             <div class="message-time">오후 11:38</div>
         </div>
@@ -1821,15 +1719,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아니지 ㅎㅎ</div>
-            <div class="message-time">오후 11:41</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">예비받고</div>
-            <div class="message-time">오후 11:41</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">완전 걸쳐서 들어갔을걸</div>
             <div class="message-time">오후 11:41</div>
         </div>
@@ -1838,10 +1734,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 그렇구나</div>
-            <div class="message-time">오후 11:41</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그래도 치위생과는 빠지긴 했나보네</div>
             <div class="message-time">오후 11:41</div>
         </div>
@@ -1850,15 +1745,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">한 100번대?</div>
-            <div class="message-time">오후 11:42</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">까지</div>
-            <div class="message-time">오후 11:42</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">빠졌을걸</div>
             <div class="message-time">오후 11:42</div>
         </div>
@@ -1871,13 +1764,14 @@
         </div>
 
         <!-- 신유수 23:43 -->
-         <div class="message-row sender-yu">
+        <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble" style="background-color: #F8F9FA; color: #ffffff; box-shadow: none; border: none; padding: 0; border-radius: 12px; overflow: hidden;">
                 <img src="answer.png" alt="story" style="display: block; max-width: 250px; width: 150%; margin-right: -35px;">
             </div>
         </div>
         <div class="message-row sender-yu">
+            <div class="message-sender"></div>
             <div class="message-bubble">근데 어젠가 나 스토리 올린거 보지 않았어?</div>
             <div class="message-time">오후 11:43</div>
         </div>
@@ -1889,13 +1783,14 @@
             <div class="message-time">오후 11:46</div>
         </div>
 
-                <div class="message-row sender-yu">
+        <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble" style="background-color: #F8F9FA; color: #ffffff; box-shadow: none; border: none; padding: 0; border-radius: 12px; overflow: hidden;">
                 <img src="story.png" alt="story" style="display: block; max-width: 300px; width: 200%;">
             </div>
         </div>
         <div class="message-row sender-yu">
+            <div class="message-sender"></div>
             <div class="message-bubble">본 걸로 나오긴 하는데</div>
             <div class="message-time">오후 11:47</div>
         </div>
@@ -1904,15 +1799,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아 나 이거 봣는데</div>
-            <div class="message-time">오후 11:49</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">나 스토리 잘 안 봐서</div>
-            <div class="message-time">오후 11:49</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">ㅎㅎ 먼 내용인지 안 봤어..</div>
             <div class="message-time">오후 11:50</div>
         </div>
@@ -1921,15 +1814,13 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그냥 방학동안 알바도 안가고 심심해서 학교에서 배운거로 내 나무위키 문서 만든게 전부긴 한데</div>
-            <div class="message-time">오후 11:51</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble"><a href="https://bada-wiki.neocities.org/wiki" target="_blank" class="message-link">https://bada-wiki.neocities.org/wiki</a></div>
-            <div class="message-time">오후 11:51</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">별건 없어</div>
             <div class="message-time">오후 11:51</div>
         </div>
@@ -1941,24 +1832,21 @@
             <span class="line"></span>
         </div>
 
-        <!-- 수아 00:08 (5개) -->
+        <!-- 수아 00:08 (4개) -->
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아니 뭐얔ㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오전 12:08</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">나 ㄹㅇ 다 보고 옴</div>
-            <div class="message-time">오전 12:08</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">오ㅑ케 잘만들었냐</div>
-            <div class="message-time">오전 12:08</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">근데 너무 자세해 내용들이 ㅋㅋㅋㅋ</div>
             <div class="message-time">오전 12:08</div>
         </div>
@@ -1970,19 +1858,17 @@
             <div class="message-time">오전 12:09</div>
         </div>
 
-        <!-- 수아 00:09 (4개) -->
+        <!-- 수아 00:09 (3개) -->
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아니보다보니</div>
-            <div class="message-time">오전 12:09</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">재밌어서</div>
-            <div class="message-time">오전 12:09</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">다봄 ㅋㅋㅋㅋㅋㅋ</div>
             <div class="message-time">오전 12:09</div>
         </div>
@@ -1998,10 +1884,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">근데 미디어 콘텐츠 쪽으로 잘 온 것 같기도 한게</div>
-            <div class="message-time">오전 12:12</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">이과랑 너무 안맞아서 문과 했는데 보건계열 가도 잘했었을까 싶고 ㅋㅋㅋㅋ</div>
             <div class="message-time">오전 12:12</div>
         </div>
@@ -2010,10 +1895,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">보건계열이 개꿀이지 ㅎㅎ취업이 쉽잖아</div>
-            <div class="message-time">오전 12:16</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">공부는 어려워도..</div>
             <div class="message-time">오전 12:16</div>
         </div>
@@ -2022,10 +1906,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋ 그치</div>
-            <div class="message-time">오전 12:17</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">동남보건대 캠퍼스 어때 커?</div>
             <div class="message-time">오전 12:17</div>
         </div>
@@ -2041,20 +1924,17 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">겁나</div>
-            <div class="message-time">오전 12:18</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">작아</div>
-            <div class="message-time">오전 12:18</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">장안대보다</div>
-            <div class="message-time">오전 12:18</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">더 작을 걸</div>
             <div class="message-time">오전 12:18</div>
         </div>
@@ -2063,15 +1943,13 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">장안대보다 크려면... 웬만한 이름 좀 있는 4년제 학교들이라...</div>
-            <div class="message-time">오전 12:20</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">처음 올땐 학교도 크고 건물 디자인이랑 조형도 다 예뻐서 좋았는데</div>
-            <div class="message-time">오전 12:20</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">1학기 다녀보니까 절반만이라도 줄였으면 좋겠어...</div>
             <div class="message-time">오전 12:21</div>
         </div>
@@ -2080,15 +1958,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오전 11:13</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">아니 글케 커?</div>
-            <div class="message-time">오전 11:13</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">우린 작아서 구경도 못한다..</div>
             <div class="message-time">오전 11:13</div>
         </div>
@@ -2104,10 +1980,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그니까</div>
-            <div class="message-time">오전 11:28</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">개크네</div>
             <div class="message-time">오전 11:28</div>
         </div>
@@ -2123,15 +1998,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그치</div>
-            <div class="message-time">오전 11:35</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">했었어</div>
-            <div class="message-time">오전 11:35</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">우린 이제 2주차야..</div>
             <div class="message-time">오전 11:35</div>
         </div>
@@ -2140,10 +2013,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">어?</div>
-            <div class="message-time">오전 11:35</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">저번주에 개강했어?</div>
             <div class="message-time">오전 11:35</div>
         </div>
@@ -2152,10 +2024,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">24일에</div>
-            <div class="message-time">오전 11:37</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">이미 했어ㅜ</div>
             <div class="message-time">오전 11:37</div>
         </div>
@@ -2164,10 +2035,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">왤케 일찍 했지</div>
-            <div class="message-time">오전 11:37</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">난 다 어제 개강하는 줄 알았어</div>
             <div class="message-time">오전 11:37</div>
         </div>
@@ -2176,15 +2046,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋ</div>
-            <div class="message-time">오전 11:39</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그니까</div>
-            <div class="message-time">오전 11:39</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">똥보대야 ㄹㅇ</div>
             <div class="message-time">오전 11:39</div>
         </div>
@@ -2193,15 +2061,13 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오전 11:39</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그래도 학교는 가깝잖아..</div>
-            <div class="message-time">오전 11:39</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">난 오티하면 1시간 걸려서 와놓고 수업 2시간 좀 넘게 하고 집 가는데...</div>
             <div class="message-time">오전 11:40</div>
         </div>
@@ -2210,15 +2076,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오전 11:42</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">나 집 멀어</div>
-            <div class="message-time">오전 11:42</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">두시간전엔 나가야해</div>
             <div class="message-time">오전 11:42</div>
         </div>
@@ -2227,10 +2091,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">탑동아냐?</div>
-            <div class="message-time">오전 11:42</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그정도라고?</div>
             <div class="message-time">오전 11:42</div>
         </div>
@@ -2239,20 +2102,17 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">나</div>
-            <div class="message-time">오전 11:43</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">화성이야</div>
-            <div class="message-time">오전 11:43</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">장안대랑 한 10분 거리?</div>
-            <div class="message-time">오전 11:43</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
             <div class="message-time">오전 11:43</div>
         </div>
@@ -2275,10 +2135,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그래? 전혀 몰랐네</div>
-            <div class="message-time">오전 11:45</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">장안대랑 10분거리면 봉담 1지구인가?</div>
             <div class="message-time">오전 11:45</div>
         </div>
@@ -2301,15 +2160,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">화성까지오는</div>
-            <div class="message-time">오전 11:47</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">셔틀버스가</div>
-            <div class="message-time">오전 11:47</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">없어</div>
             <div class="message-time">오전 11:47</div>
         </div>
@@ -2318,10 +2175,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">장안대는 인천 부평까지 있어서 있을 줄 알았는데</div>
-            <div class="message-time">오전 11:48</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">수원이랑 화성이 먼 편이 아니니까</div>
             <div class="message-time">오전 11:48</div>
         </div>
@@ -2330,10 +2186,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그니까</div>
-            <div class="message-time">오전 11:53</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">왜 안 해주는지….</div>
             <div class="message-time">오전 11:53</div>
         </div>
@@ -2342,10 +2197,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">예산도 많을거 같은데</div>
-            <div class="message-time">오전 11:54</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">힘들겠다</div>
             <div class="message-time">오전 11:54</div>
         </div>
@@ -2354,10 +2208,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그니까돈을안써ㅜ</div>
-            <div class="message-time">오전 11:59</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">내 등록금</div>
             <div class="message-time">오전 11:59</div>
         </div>
@@ -2366,10 +2219,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">보건계열은 등록금 얼마야?</div>
-            <div class="message-time">오전 11:59</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">우린 예체능이라 좀 비싸던데</div>
             <div class="message-time">오전 11:59</div>
         </div>
@@ -2378,10 +2230,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">처음엔 360이였는데 이젠 330</div>
-            <div class="message-time">오후 12:00</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">근데 여기에 책사거 실습용품사면 한 430?</div>
             <div class="message-time">오후 12:00</div>
         </div>
@@ -2390,10 +2241,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">와...</div>
-            <div class="message-time">오후 12:00</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">330이 국가장학금으로 깎인거야?</div>
             <div class="message-time">오후 12:01</div>
         </div>
@@ -2402,15 +2252,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아</div>
-            <div class="message-time">오후 12:05</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">아니?</div>
-            <div class="message-time">오후 12:05</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">걍 330이던데</div>
             <div class="message-time">오후 12:05</div>
         </div>
@@ -2419,25 +2267,21 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아</div>
-            <div class="message-time">오후 12:05</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">국가장학금 신청 안했어..?</div>
-            <div class="message-time">오후 12:05</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">우리도 원래 347인가 그랬는데</div>
-            <div class="message-time">오후 12:06</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">국가장학금으로 220 깎아주던데</div>
-            <div class="message-time">오후 12:06</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그래서 1학기땐 다 내고 이번 학기는 127만 냈는데..</div>
             <div class="message-time">오후 12:06</div>
         </div>
@@ -2446,10 +2290,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아 그거 물어본 거면</div>
-            <div class="message-time">오후 12:12</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">나는 국장이랑 희망? 그거랑 성적장학금 받아서</div>
             <div class="message-time">오후 12:13</div>
         </div>
@@ -2465,20 +2308,17 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 성적까지 받았어?</div>
-            <div class="message-time">오후 12:13</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">난 전문대라 여기 애들 공부 못할 줄 알았는데</div>
-            <div class="message-time">오후 12:13</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">잘하더라</div>
-            <div class="message-time">오후 12:13</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">나도 못 한 편은 아니었는데.....</div>
             <div class="message-time">오후 12:13</div>
         </div>
@@ -2501,10 +2341,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 12:16</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">ㅇ아니 나 ㄹㅇ 못했는데</div>
             <div class="message-time">오후 12:16</div>
         </div>
@@ -2520,15 +2359,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그케 잘하진 않았는데</div>
-            <div class="message-time">오후 12:19</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">ㄹㅇ 왜 받았는지</div>
-            <div class="message-time">오후 12:19</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">나도 의문</div>
             <div class="message-time">오후 12:19</div>
         </div>
@@ -2544,10 +2381,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">뭐야 92인데 3.8이면</div>
-            <div class="message-time">오후 12:22</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">ㄹㅇ 애들이 엄청 잘했나보네</div>
             <div class="message-time">오후 12:23</div>
         </div>
@@ -2556,15 +2392,13 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그니까</div>
-            <div class="message-time">오후 12:28</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">94점인가 거기부터 4학점이던데</div>
-            <div class="message-time">오후 12:28</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">넌 몇학점인데?</div>
             <div class="message-time">오후 12:28</div>
         </div>
@@ -2580,10 +2414,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">;;;;</div>
-            <div class="message-time">오후 12:31</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">잘 봤잖아....</div>
             <div class="message-time">오후 12:31</div>
         </div>
@@ -2592,25 +2425,21 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">근데</div>
-            <div class="message-time">오후 12:32</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">너도</div>
-            <div class="message-time">오후 12:32</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">못본게</div>
-            <div class="message-time">오후 12:32</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">전혀 아니라</div>
-            <div class="message-time">오후 12:32</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">ㄹㅇ 너도 울학교엿음</div>
             <div class="message-time">오후 12:32</div>
         </div>
@@ -2626,10 +2455,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">나보다</div>
-            <div class="message-time">오후 12:32</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">높았을듯</div>
             <div class="message-time">오후 12:32</div>
         </div>
@@ -2652,10 +2480,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그건 맞는데</div>
-            <div class="message-time">오후 12:37</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">애들 생각보다 공부 안 해 ㅋㅋㅋ</div>
             <div class="message-time">오후 12:37</div>
         </div>
@@ -2664,10 +2491,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그래?</div>
-            <div class="message-time">오후 12:38</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">네가 잘 봐서 그렇게 보이는거 아닐까...?</div>
             <div class="message-time">오후 12:38</div>
         </div>
@@ -2697,10 +2523,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">동보대 개총했어?</div>
-            <div class="message-time">오전 10:32</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">저번주에 했을라나</div>
             <div class="message-time">오전 10:32</div>
         </div>
@@ -2709,15 +2534,13 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">개총?</div>
-            <div class="message-time">오전 10:35</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">우린 그런 거 안 해….</div>
-            <div class="message-time">오전 10:35</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">똥보대는 그런 거 없어 ㅜ</div>
             <div class="message-time">오전 10:35</div>
         </div>
@@ -2726,10 +2549,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">엥 그정도라고?</div>
-            <div class="message-time">오전 11:10</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">1학기때도 안했어?</div>
             <div class="message-time">오전 11:10</div>
         </div>
@@ -2738,10 +2560,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">신환회 그거랑 똑같은가</div>
-            <div class="message-time">오전 11:54</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그것만 함</div>
             <div class="message-time">오전 11:54</div>
         </div>
@@ -2750,10 +2571,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">신입생환영회 맞아</div>
-            <div class="message-time">오전 11:56</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">근데 2학기 개총은 안했구나..</div>
             <div class="message-time">오전 11:56</div>
         </div>
@@ -2769,10 +2589,9 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아니..</div>
-            <div class="message-time">오전 11:59</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그런 거 안 가..</div>
             <div class="message-time">오전 11:59</div>
         </div>
@@ -2795,20 +2614,17 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 2:22</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 2:22</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">그건 아냨ㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 2:22</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">우리학과만 안 한듯???</div>
             <div class="message-time">오후 2:22</div>
         </div>
@@ -2817,10 +2633,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그래? 우리도 작년인가 재작년인가 까지 안하다가 올해</div>
-            <div class="message-time">오후 2:23</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">MT 가잔 말이 너무 많이 나오니까 보내주더라고</div>
             <div class="message-time">오후 2:23</div>
         </div>
@@ -2836,10 +2651,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">응 ㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 2:25</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">4월말인가 가고</div>
             <div class="message-time">오후 2:25</div>
         </div>
@@ -2848,10 +2662,9 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">개총은 1학기때 3월 중순인가 말에 가고</div>
-            <div class="message-time">오후 2:26</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">다음주 수요일에 2학기 개총 있던데</div>
             <div class="message-time">오후 2:26</div>
         </div>
@@ -2881,20 +2694,17 @@
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">근데 우ㅗㄴ래 지원해줘?</div>
-            <div class="message-time">오후 2:31</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">내 친구들도</div>
-            <div class="message-time">오후 2:31</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">다들 10얼마</div>
-            <div class="message-time">오후 2:31</div>
         </div>
         <div class="message-row sender-sua">
-            <div class="message-sender">수아</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">내고 갔던데</div>
             <div class="message-time">오후 2:31</div>
         </div>
@@ -2917,15 +2727,13 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 그래??</div>
-            <div class="message-time">오후 2:37</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">개총은 해주길래</div>
-            <div class="message-time">오후 2:37</div>
         </div>
         <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
+            <div class="message-sender"></div>
             <div class="message-bubble">엠티도 해주는 알았지</div>
             <div class="message-time">오후 2:37</div>
         </div>
@@ -2953,31 +2761,31 @@
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">동보대도 현장실습 가?</div>
-            <div class="message-time">오후 1시35분</div>
+            <div class="message-time">오후 1:35</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">보건계열이면 가지않나</div>
-            <div class="message-time">오후 1시35분</div>
+            <div class="message-time">오후 1:35</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">현장실습?? 그건 2학년때 갈걸.?</div>
-            <div class="message-time">오후 1시57분</div>
+            <div class="message-time">오후 1:57</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그래..?</div>
-            <div class="message-time">오후 2시01분</div>
+            <div class="message-time">오후 2:01</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">우린 다음주에 간다길래</div>
-            <div class="message-time">오후 2시01분</div>
+            <div class="message-time">오후 2:01</div>
         </div>
 
         <div class="message-row sender-sua">
@@ -2985,529 +2793,523 @@
             <div class="message-bubble" style="background-color: #F8F9FA; color: #ffffff; box-shadow: none; border: none; padding: 0; border-radius: 12px; overflow: hidden;">
                 <img src="video_sua_.png" alt="story" style="display: block; max-width: 175px; width: 75%;">
             </div>
-            <div class="message-time">오후 4시02분</div>
+            <div class="message-time">오후 4:02</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">왜 다 비어있어 ㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 4시05분</div>
+            <div class="message-time">오후 4:05</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">애들이 없는거 같은데</div>
-            <div class="message-time">오후 4시05분</div>
+            <div class="message-time">오후 4:05</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">저때</div>
-            <div class="message-time">오후 4시07분</div>
+            <div class="message-time">오후 4:07</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
-            <div class="message-bubble">내가 일찍와섴ㅋㅋㅌㅋ</div>
-            <div class="message-time">오후 4시07분</div>
+            <div class="message-bubble">내가 일찍와섴ㅋㅌㅋ</div>
+            <div class="message-time">오후 4:07</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">근데 아까 보낸건데</div>
-            <div class="message-time">오후 4시07분</div>
+            <div class="message-time">오후 4:07</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 아까 찍은거구나</div>
-            <div class="message-time">오후 4시07분</div>
+            <div class="message-time">오후 4:07</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 그래?</div>
-            <div class="message-time">오후 4시07분</div>
+            <div class="message-time">오후 4:07</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">이제 보내졌네</div>
-            <div class="message-time">오후 4시07분</div>
+            <div class="message-time">오후 4:07</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">근데 실습도구도 사비로 사는거였나</div>
-            <div class="message-time">오후 4시08분</div>
+            <div class="message-time">오후 4:08</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">맞아</div>
-            <div class="message-time">오후 4시08분</div>
+            <div class="message-time">오후 4:08</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">50주고 삼..</div>
-            <div class="message-time">오후 4시08분</div>
+            <div class="message-time">오후 4:08</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">옷이랑 신발 따로 사여해서</div>
-            <div class="message-time">오후 4시09분</div>
+            <div class="message-time">오후 4:09</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">한 55?</div>
-            <div class="message-time">오후 4시09분</div>
+            <div class="message-time">오후 4:09</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 실습복도...?</div>
-            <div class="message-time">오후 4시09분</div>
+            <div class="message-time">오후 4:09</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">맞아 ㅆ ㅜㅜ</div>
-            <div class="message-time">오후 4시09분</div>
+            <div class="message-time">오후 4:09</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">보통 다 지원해줄법 한데</div>
-            <div class="message-time">오후 4시10분</div>
+            <div class="message-time">오후 4:10</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그니까</div>
-            <div class="message-time">오후 4시15분</div>
+            <div class="message-time">오후 4:15</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">내돈 진짜</div>
-            <div class="message-time">오후 4시15분</div>
+            <div class="message-time">오후 4:15</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">우리 다음주 목요일에 현장체험실습 간다는데</div>
-            <div class="message-time">오후 4시17분</div>
+            <div class="message-time">오후 4:17</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
-            <div class="message-bubble">말이 실습이지 그냥 고등학교때 현장체험학습처럼 보내주던데</div>
-            <div class="message-time">오후 4시17분</div>
-        </div>
-
-        <div class="message-row sender-yu">
-            <div class="message-sender">신유수</div>
-            <div class="message-bubble">말이 실습이지 그냥 고등학교때 현장체험학습 처럼 보내주던데 (edited)</div>
-            <div class="message-time">오후 4시17분</div>
+            <div class="message-bubble">말이 실습이지 그냥 고등학교때 현장체험학습 처럼 보내주던데</div>
+            <div class="message-time">오후 4:17</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">.? 걍 놀러 가?</div>
-            <div class="message-time">오후 4시24분</div>
+            <div class="message-time">오후 4:24</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아무래도 미디어 콘텐츠과니까</div>
-            <div class="message-time">오후 4시24분</div>
+            <div class="message-time">오후 4:24</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">메인은 과천 현대미술관인거 같은데</div>
-            <div class="message-time">오후 4시25분</div>
+            <div class="message-time">오후 4:25</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">1차로 과천 현대미술관 갔다가</div>
-            <div class="message-time">오후 4시25분</div>
+            <div class="message-time">오후 4:25</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">2차로 바로 위에 서울랜드 간다는데...?</div>
-            <div class="message-time">오후 4시25분</div>
+            <div class="message-time">오후 4:25</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">학과에서 지원해주는거니까 또 서울랜드 간다고 안하고 테마파크 현장실습으로 포장해서 간대</div>
-            <div class="message-time">오후 4시26분</div>
+            <div class="message-time">오후 4:26</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆ</div>
-            <div class="message-time">오후 4시53분</div>
+            <div class="message-time">오후 4:53</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">뭐야</div>
-            <div class="message-time">오후 4시53분</div>
+            <div class="message-time">오후 4:53</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">개부럽다 진짜</div>
-            <div class="message-time">오후 4시53분</div>
+            <div class="message-time">오후 4:53</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">이번에 삼성한테 지원 받아서 학과에 돈 좀 생긴거 같은데</div>
-            <div class="message-time">오후 4시55분</div>
+            <div class="message-time">오후 4:55</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">이왕 지원 받은거 버스까지 대절해주지</div>
-            <div class="message-time">오후 4시55분</div>
+            <div class="message-time">오후 4:55</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">10시반까지 과천 현대미술관으로 오래...</div>
-            <div class="message-time">오후 4시55분</div>
+            <div class="message-time">오후 4:55</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">.?</div>
-            <div class="message-time">오후 6시09분</div>
+            <div class="message-time">오후 6:09</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋ그런곳에서</div>
-            <div class="message-time">오후 6시09분</div>
+            <div class="message-time">오후 6:09</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">돈을 아끼냐</div>
-            <div class="message-time">오후 6시09분</div>
+            <div class="message-time">오후 6:09</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">난 현장실습 이라길래 관련 분야 업체나 회사 가서 실습하는건 줄 알았는데</div>
-            <div class="message-time">오후 6시21분</div>
+            <div class="message-time">오후 6:21</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그냥 고등학교 현체랑 다를게 없잖아 이러면</div>
-            <div class="message-time">오후 6시22분</div>
+            <div class="message-time">오후 6:22</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅋㅋㅋㅋ 걍 놀러가는 거넼ㅋㅋㅌ</div>
-            <div class="message-time">오후 6시24분</div>
+            <div class="message-time">오후 6:24</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그니까 ㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 6시24분</div>
+            <div class="message-time">오후 6:24</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">놀이기구도 잘 못타는데</div>
-            <div class="message-time">오후 6시24분</div>
+            <div class="message-time">오후 6:24</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋㅋ놀이기구 못타?</div>
-            <div class="message-time">오후 6시48분</div>
+            <div class="message-time">오후 6:48</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">응...ㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 6시49분</div>
+            <div class="message-time">오후 6:49</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">심각한 정도는 아닌데</div>
-            <div class="message-time">오후 6시49분</div>
+            <div class="message-time">오후 6:49</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">구라 ㅋ</div>
-            <div class="message-time">오후 6시50분</div>
+            <div class="message-time">오후 6:50</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">??? ㅋㅋㅋ</div>
-            <div class="message-time">오후 6시50분</div>
+            <div class="message-time">오후 6:50</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">잘 못탄다는게 구라 라는거야, 심각한 정도는 아니라는게 구라 라는거야</div>
-            <div class="message-time">오후 6시50분</div>
+            <div class="message-time">오후 6:50</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그냥 엄청 못타는데 아니라고 하는 거 같아서 ㅎ</div>
-            <div class="message-time">오후 6시51분</div>
+            <div class="message-time">오후 6:51</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 6시52분</div>
+            <div class="message-time">오후 6:52</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아니야... 엄청 못타진 않아...</div>
-            <div class="message-time">오후 6시52분</div>
+            <div class="message-time">오후 6:52</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">티는 탈 수 있어.?</div>
-            <div class="message-time">오후 6시52분</div>
+            <div class="message-time">오후 6:52</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아니....?</div>
-            <div class="message-time">오후 6시53분</div>
+            <div class="message-time">오후 6:53</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅎㅎ</div>
-            <div class="message-time">오후 6시53분</div>
+            <div class="message-time">오후 6:53</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">바이킹은</div>
-            <div class="message-time">오후 6시54분</div>
+            <div class="message-time">오후 6:54</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">비슷한건 안쳐주나</div>
-            <div class="message-time">오후 6시54분</div>
+            <div class="message-time">오후 6:54</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">안쳐준다</div>
-            <div class="message-time">오후 6시56분</div>
+            <div class="message-time">오후 6:56</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅠ</div>
-            <div class="message-time">오후 6시56분</div>
+            <div class="message-time">오후 6:56</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">한 번도 안타봤는데</div>
-            <div class="message-time">오후 6시57분</div>
+            <div class="message-time">오후 6:57</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그럼 뭐타봄.?</div>
-            <div class="message-time">오후 6시58분</div>
+            <div class="message-time">오후 6:58</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">허리케인이랑 썬더폴스랑</div>
-            <div class="message-time">오후 6시59분</div>
+            <div class="message-time">오후 6:59</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">음</div>
-            <div class="message-time">오후 6시59분</div>
+            <div class="message-time">오후 6:59</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">흠 그게 뭐지 ㅎ</div>
-            <div class="message-time">오후 6시59분</div>
+            <div class="message-time">오후 6:59</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">가억도 안 남 ㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 6시59분</div>
+            <div class="message-time">오후 6:59</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">둘 다 에버랜드에 있는건데 두번째껀 후룸라이드고</div>
-            <div class="message-time">오후 6시59분</div>
+            <div class="message-time">오후 6:59</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">첫번째껀</div>
-            <div class="message-time">오후 6시59분</div>
+            <div class="message-time">오후 6:59</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">[사진]</div>
-            <div class="message-time">오후 6시59분</div>
+            <div class="message-time">오후 6:59</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">이거</div>
-            <div class="message-time">오후 6시59분</div>
+            <div class="message-time">오후 6:59</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아 ㅋㅋㄱㅋㄱㅋㄱㅋ</div>
-            <div class="message-time">오후 7시02분</div>
+            <div class="message-time">오후 7:02</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">이정도면</div>
-            <div class="message-time">오후 7시02분</div>
+            <div class="message-time">오후 7:02</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">잘타네 ㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 7시02분</div>
+            <div class="message-time">오후 7:02</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 7시03분</div>
+            <div class="message-time">오후 7:03</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">고2때 현체로 에버랜드 갔을때 이번에는 기필코 바이킹 타야겠다 하고 갔는데</div>
-            <div class="message-time">오후 7시03분</div>
+            <div class="message-time">오후 7:03</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">막상 보니까 되게 크길래 걍 나왔지 ㅎ</div>
-            <div class="message-time">오후 7시04분</div>
+            <div class="message-time">오후 7:04</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 7시04분</div>
+            <div class="message-time">오후 7:04</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아니 저거랑</div>
-            <div class="message-time">오후 7시04분</div>
+            <div class="message-time">오후 7:04</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㄹㅇ 비슷한데</div>
-            <div class="message-time">오후 7시04분</div>
+            <div class="message-time">오후 7:04</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">각도는 허리케인이 더 높은데</div>
-            <div class="message-time">오후 7시05분</div>
+            <div class="message-time">오후 7:05</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">높이는 바이킹이 더 높던데..</div>
-            <div class="message-time">오후 7시05분</div>
+            <div class="message-time">오후 7:05</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋㅋㅋ 더 재밌음 ㅎ</div>
-            <div class="message-time">오후 7시16분</div>
+            <div class="message-time">오후 7:16</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 야구 보고 싶은데 목요일 날 쪽지시험 때문에 고민이네</div>
-            <div class="message-time">오후 7시21분</div>
+            <div class="message-time">오후 7:21</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">30분 되는 영상 3개 보고 오라는데 한 번 보는거로는 시험 보기 어려울거 같다는데...</div>
-            <div class="message-time">오후 7시22분</div>
+            <div class="message-time">오후 7:22</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">야구 포기해.</div>
-            <div class="message-time">오후 7시24분</div>
+            <div class="message-time">오후 7:24</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅠㅠ</div>
-            <div class="message-time">오후 7시32분</div>
+            <div class="message-time">오후 7:32</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">오늘 안현민 2사 만루에서 3타점 적시타 치고 타선 좋은거 같던데</div>
-            <div class="message-time">오후 7시32분</div>
+            <div class="message-time">오후 7:32</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아쉽네</div>
-            <div class="message-time">오후 7시32분</div>
+            <div class="message-time">오후 7:32</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">흠.. 퍼기해야지 ㅎ</div>
-            <div class="message-time">오후 7시44분</div>
+            <div class="message-time">오후 7:44</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">어쩔 수 없지...ㅎㅎ</div>
-            <div class="message-time">오후 7시52분</div>
+            <div class="message-time">오후 7:52</div>
         </div>
 
         <div class="message-row sender-yu">
@@ -3515,1069 +3317,1069 @@
             <div class="message-bubble" style="background-color: #F8F9FA; color: #ffffff; box-shadow: none; border: none; padding: 0; border-radius: 12px; overflow: hidden;">
                 <img src="photo_yu_top.png" alt="story" style="display: block; max-width: 160px; width: 60%; margin-left: auto;">
             </div>
-            <div class="message-time">오후 4시36분</div>
+            <div class="message-time">오후 4:36</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">오늘 왤케 졸립지</div>
-            <div class="message-time">오후 4시36분</div>
+            <div class="message-time">오후 4:36</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 4시47분</div>
+            <div class="message-time">오후 4:47</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그니까</div>
-            <div class="message-time">오후 4시47분</div>
+            <div class="message-time">오후 4:47</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">오늘따라 더 피곤해</div>
-            <div class="message-time">오후 4시47분</div>
+            <div class="message-time">오후 4:47</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">개총 갈 수 있을까.......</div>
-            <div class="message-time">오후 4시47분</div>
+            <div class="message-time">오후 4:47</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋㅋ오늘이야?</div>
-            <div class="message-time">오후 4시52분</div>
+            <div class="message-time">오후 4:52</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">응 ㅋㅋㅋ</div>
-            <div class="message-time">오후 4시52분</div>
+            <div class="message-time">오후 4:52</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">훠궈랑 양꼬치 무한리필 간다는데</div>
-            <div class="message-time">오후 4시52분</div>
+            <div class="message-time">오후 4:52</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">수원역</div>
-            <div class="message-time">오후 4시52분</div>
+            <div class="message-time">오후 4:52</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">???</div>
-            <div class="message-time">오후 4시53분</div>
+            <div class="message-time">오후 4:53</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">맛집 공유좀</div>
-            <div class="message-time">오후 4시53분</div>
+            <div class="message-time">오후 4:53</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">나 원래 오늘 양꼬치 먹으러</div>
-            <div class="message-time">오후 4시53분</div>
+            <div class="message-time">오후 4:53</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">갈라햇는데ㅜ</div>
-            <div class="message-time">오후 4시53분</div>
+            <div class="message-time">오후 4:53</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">강남까지</div>
-            <div class="message-time">오후 4시53분</div>
+            <div class="message-time">오후 4:53</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">왜 강남까지 가?</div>
-            <div class="message-time">오후 4시53분</div>
+            <div class="message-time">오후 4:53</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아니 맛있어보이는곳이</div>
-            <div class="message-time">오후 4시54분</div>
+            <div class="message-time">오후 4:54</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">거기밖에 없어..</div>
-            <div class="message-time">오후 4시54분</div>
+            <div class="message-time">오후 4:54</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">근데 왜 갈라했는데야</div>
-            <div class="message-time">오후 4시54분</div>
+            <div class="message-time">오후 4:54</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">결국</div>
-            <div class="message-time">오후 4시55분</div>
+            <div class="message-time">오후 4:55</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">안 가기러함ㅋㅋㅋ</div>
-            <div class="message-time">오후 4시55분</div>
+            <div class="message-time">오후 4:55</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">너무 멀기도하고</div>
-            <div class="message-time">오후 4시55분</div>
+            <div class="message-time">오후 4:55</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">오늘 6시에</div>
-            <div class="message-time">오후 4시55분</div>
+            <div class="message-time">오후 4:55</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">끝나서</div>
-            <div class="message-time">오후 4시55분</div>
+            <div class="message-time">오후 4:55</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">친구들이랑 가기로 한거야?</div>
-            <div class="message-time">오후 4시55분</div>
+            <div class="message-time">오후 4:55</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그치</div>
-            <div class="message-time">오후 4시55분</div>
+            <div class="message-time">오후 4:55</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">울반애들</div>
-            <div class="message-time">오후 4시55분</div>
+            <div class="message-time">오후 4:55</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">근데 강남은 너무 먼데 수원역이면 모를까..</div>
-            <div class="message-time">오후 4시56분</div>
+            <div class="message-time">오후 4:56</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 5시00분</div>
+            <div class="message-time">오후 5:00</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">수원역 맛집이면</div>
-            <div class="message-time">오후 5시00분</div>
+            <div class="message-time">오후 5:00</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">좀 알ㄹ려줘ㅜ</div>
-            <div class="message-time">오후 5시00분</div>
+            <div class="message-time">오후 5:00</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋ 나도 많이 안가는데</div>
-            <div class="message-time">오후 5시02분</div>
+            <div class="message-time">오후 5:02</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 하나 있다</div>
-            <div class="message-time">오후 5시02분</div>
+            <div class="message-time">오후 5:02</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">어디</div>
-            <div class="message-time">오후 5시03분</div>
+            <div class="message-time">오후 5:03</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">닭갈비 집 있었는데 어디였지</div>
-            <div class="message-time">오후 6시27분</div>
+            <div class="message-time">오후 6:27</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">엥 어디???</div>
-            <div class="message-time">오후 6시30분</div>
+            <div class="message-time">오후 6:30</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">어딘지는 까먹긴햤는데</div>
-            <div class="message-time">오후 8시10분</div>
+            <div class="message-time">오후 8:10</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아</div>
-            <div class="message-time">오후 9시02분</div>
+            <div class="message-time">오후 9:02</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">집 갈 수 있을까</div>
-            <div class="message-time">오후 9시02분</div>
+            <div class="message-time">오후 9:02</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">왜 ㅋㄱㅋㄱㅋㅋㅋ</div>
-            <div class="message-time">오후 9시27분</div>
+            <div class="message-time">오후 9:27</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 아니다</div>
-            <div class="message-time">오후 9시53분</div>
+            <div class="message-time">오후 9:53</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">갈 수 있겠다</div>
-            <div class="message-time">오후 9시54분</div>
+            <div class="message-time">오후 9:54</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">술마셔서?</div>
-            <div class="message-time">오후 9시55분</div>
+            <div class="message-time">오후 9:55</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">어 ㅋㅋㅋㅋ 다행히 다 깨서</div>
-            <div class="message-time">오후 9시55분</div>
+            <div class="message-time">오후 9:55</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">원래 술자리 있을때 항상 1차만 가는데 오늘 2차까지 갔더니</div>
-            <div class="message-time">오후 10시00분</div>
+            <div class="message-time">오후 10:00</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">술 못마시는구나 ㅋ</div>
-            <div class="message-time">오후 10시01분</div>
+            <div class="message-time">오후 10:01</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">저번엔 놀이기구였는데 이번엔 술이야? ㅋㅋㅋ</div>
-            <div class="message-time">오후 10시01분</div>
+            <div class="message-time">오후 10:01</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">넌 잘마셔?</div>
-            <div class="message-time">오후 10시01분</div>
+            <div class="message-time">오후 10:01</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">흠…….</div>
-            <div class="message-time">오후 10시21분</div>
+            <div class="message-time">오후 10:21</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅎㅎ</div>
-            <div class="message-time">오후 10시21분</div>
+            <div class="message-time">오후 10:21</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">전엔 잘 마셨는데</div>
-            <div class="message-time">오후 10시21분</div>
+            <div class="message-time">오후 10:21</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">이젠 큼..</div>
-            <div class="message-time">오후 10시21분</div>
+            <div class="message-time">오후 10:21</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 10시21분</div>
+            <div class="message-time">오후 10:21</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">이건 진짜야? 구라없이?</div>
-            <div class="message-time">오후 10시21분</div>
+            <div class="message-time">오후 10:21</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅎㅎ</div>
-            <div class="message-time">오후 10시22분</div>
+            <div class="message-time">오후 10:22</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">구라 살짝?</div>
-            <div class="message-time">오후 10시22분</div>
+            <div class="message-time">오후 10:22</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 10시22분</div>
+            <div class="message-time">오후 10:22</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 10시23분</div>
+            <div class="message-time">오후 10:23</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">근데 까는게 아니라</div>
-            <div class="message-time">오후 10시23분</div>
+            <div class="message-time">오후 10:23</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">진짜</div>
-            <div class="message-time">오후 10시23분</div>
+            <div class="message-time">오후 10:23</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">놀이기구는 잘 탈 것 같은데</div>
-            <div class="message-time">오후 10시23분</div>
+            <div class="message-time">오후 10:23</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">술은 못마실 것 같았어 ㅋㅋ</div>
-            <div class="message-time">오후 10시24분</div>
+            <div class="message-time">오후 10:24</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">…</div>
-            <div class="message-time">오후 10시24분</div>
+            <div class="message-time">오후 10:24</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">이게 무슨 ㅋ</div>
-            <div class="message-time">오후 10시24분</div>
+            <div class="message-time">오후 10:24</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 10시24분</div>
+            <div class="message-time">오후 10:24</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">술 안 마시는 거지 ㅎㅎ</div>
-            <div class="message-time">오후 10시24분</div>
+            <div class="message-time">오후 10:24</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 10시24분</div>
+            <div class="message-time">오후 10:24</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">근데 1차때 많이 마셔서 그래....</div>
-            <div class="message-time">오후 10시32분</div>
+            <div class="message-time">오후 10:32</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 10시33분</div>
+            <div class="message-time">오후 10:33</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">얼마나</div>
-            <div class="message-time">오후 10시33분</div>
+            <div class="message-time">오후 10:33</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">마셧는데</div>
-            <div class="message-time">오후 10시33분</div>
+            <div class="message-time">오후 10:33</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">훠궈 양꼬치 무한리필 집 가서 거의 맥주만 마시긴 했는데</div>
-            <div class="message-time">오후 10시34분</div>
+            <div class="message-time">오후 10:34</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">템포가 빨랐어 ㅋㅋ</div>
-            <div class="message-time">오후 10시34분</div>
+            <div class="message-time">오후 10:34</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">막 2병씩 마셨니.?</div>
-            <div class="message-time">오후 10시36분</div>
+            <div class="message-time">오후 10:36</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">한 번에?</div>
-            <div class="message-time">오후 10시44분</div>
+            <div class="message-time">오후 10:44</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">흠 그냥 술집에서.?</div>
-            <div class="message-time">오후 10시49분</div>
+            <div class="message-time">오후 10:49</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">최소 3병 정도 마신거 같은데</div>
-            <div class="message-time">오후 10시49분</div>
+            <div class="message-time">오후 10:49</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">??? 맥즈를?</div>
-            <div class="message-time">오후 11시02분</div>
+            <div class="message-time">오후 11:02</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">안 배부르냨ㅋㅋㅋ</div>
-            <div class="message-time">오후 11시02분</div>
+            <div class="message-time">오후 11:02</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">술로... 배가 차?</div>
-            <div class="message-time">오후 11시03분</div>
+            <div class="message-time">오후 11:03</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">보통 음식으로 차지않나</div>
-            <div class="message-time">오후 11시03분</div>
+            <div class="message-time">오후 11:03</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">한 번에 3병 원샷하진 않지 당연히</div>
-            <div class="message-time">오후 11시03분</div>
+            <div class="message-time">오후 11:03</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 11시04분</div>
+            <div class="message-time">오후 11:04</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">아니 특히</div>
-            <div class="message-time">오후 11시04분</div>
+            <div class="message-time">오후 11:04</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">맥주는 엄청 ㅐ부른데</div>
-            <div class="message-time">오후 11시04분</div>
+            <div class="message-time">오후 11:04</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">소주는 잘 못마셔서 마시라면 마시는데</div>
-            <div class="message-time">오후 11시05분</div>
+            <div class="message-time">오후 11:05</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">진짜 내킬 때 아니면 안마셔</div>
-            <div class="message-time">오후 11시05분</div>
+            <div class="message-time">오후 11:05</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 11시29분</div>
+            <div class="message-time">오후 11:29</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">소주는 근데</div>
-            <div class="message-time">오후 11시29분</div>
+            <div class="message-time">오후 11:29</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㄹㅇ 맛없어서ㅜ</div>
-            <div class="message-time">오후 11시29분</div>
+            <div class="message-time">오후 11:29</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그니까 ㅋㅋ</div>
-            <div class="message-time">오후 11시30분</div>
+            <div class="message-time">오후 11:30</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">맨날 소주만 먹는애들 이해를 못하겠늠ㅎㅎ</div>
-            <div class="message-time">오전 12시05분</div>
+            <div class="message-time">오전 12:05</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그니까.. 가끔 맛있을때도 있긴한데</div>
-            <div class="message-time">오전 12시06분</div>
+            <div class="message-time">오전 12:06</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">맨날 항상 소주만 먹는건...</div>
-            <div class="message-time">오전 12시06분</div>
+            <div class="message-time">오전 12:06</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">근데 12신데 안자?</div>
-            <div class="message-time">오전 12시08분</div>
+            <div class="message-time">오전 12:08</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">12시에 자는 건 아니지.</div>
-            <div class="message-time">오전 12시09분</div>
+            <div class="message-time">오전 12:09</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">??</div>
-            <div class="message-time">오전 12시09분</div>
+            <div class="message-time">오전 12:09</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">오전수업 아니야?</div>
-            <div class="message-time">오전 12시09분</div>
+            <div class="message-time">오전 12:09</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">맞긴해 ㅎㅎ</div>
-            <div class="message-time">오전 12시11분</div>
+            <div class="message-time">오전 12:11</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">뭐야 왜 젤 먼저 봐</div>
-            <div class="message-time">오후 3시55분</div>
+            <div class="message-time">오후 3:55</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">수업 안해?</div>
-            <div class="message-time">오후 3시56분</div>
+            <div class="message-time">오후 3:56</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">나</div>
-            <div class="message-time">오후 3시56분</div>
+            <div class="message-time">오후 3:56</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">오늘 1시에</div>
-            <div class="message-time">오후 3시56분</div>
+            <div class="message-time">오후 3:56</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">끝났어 ㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 3시56분</div>
+            <div class="message-time">오후 3:56</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 오전수업이라 일찍 끝난건가</div>
-            <div class="message-time">오후 3시56분</div>
+            <div class="message-time">오후 3:56</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 3시56분</div>
+            <div class="message-time">오후 3:56</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">맞아 오늘만..</div>
-            <div class="message-time">오후 3시57분</div>
+            <div class="message-time">오후 3:57</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">오전수업이 오늘 하나야??</div>
-            <div class="message-time">오후 3시57분</div>
+            <div class="message-time">오후 3:57</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">이케 일찍 끝나는 건 하루ㅜ</div>
-            <div class="message-time">오후 3시59분</div>
+            <div class="message-time">오후 3:59</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">우린 일주일에 이틀있는데</div>
-            <div class="message-time">오후 3시59분</div>
+            <div class="message-time">오후 3:59</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">공강은 금요일이지?</div>
-            <div class="message-time">오후 3시59분</div>
+            <div class="message-time">오후 3:59</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">……</div>
-            <div class="message-time">오후 4시01분</div>
+            <div class="message-time">오후 4:01</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">.......</div>
-            <div class="message-time">오후 4시03분</div>
+            <div class="message-time">오후 4:03</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아니</div>
-            <div class="message-time">오후 4시03분</div>
+            <div class="message-time">오후 4:03</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">에이</div>
-            <div class="message-time">오후 4시03분</div>
+            <div class="message-time">오후 4:03</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아니지......?</div>
-            <div class="message-time">오후 4시03분</div>
+            <div class="message-time">오후 4:03</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">이거 답장한거지..??</div>
-            <div class="message-time">오후 4시03분</div>
+            <div class="message-time">오후 4:03</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 4시05분</div>
+            <div class="message-time">오후 4:05</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">없어 우리 공강</div>
-            <div class="message-time">오후 4시05분</div>
+            <div class="message-time">오후 4:05</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">....</div>
-            <div class="message-time">오후 4시05분</div>
+            <div class="message-time">오후 4:05</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아니 전문대는 시간표 다 짜서 나와서</div>
-            <div class="message-time">오후 4시05분</div>
+            <div class="message-time">오후 4:05</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">금공강이 젤 많고, 일주일에 하루씩은 다 있는데....</div>
-            <div class="message-time">오후 4시05분</div>
+            <div class="message-time">오후 4:05</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">일주일 동안 공강 없는건 의대 밖에 못봤는데...</div>
-            <div class="message-time">오후 4시06분</div>
+            <div class="message-time">오후 4:06</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">누가보면 우리 의대인줄;</div>
-            <div class="message-time">오후 4시07분</div>
+            <div class="message-time">오후 4:07</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">공강 내놔라 동보대</div>
-            <div class="message-time">오후 4시07분</div>
+            <div class="message-time">오후 4:07</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">결은 같잖아 ㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 4시10분</div>
+            <div class="message-time">오후 4:10</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">과연 그럴까.</div>
-            <div class="message-time">오후 4시32분</div>
+            <div class="message-time">오후 4:32</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">왜 ㅋㅋ</div>
-            <div class="message-time">오후 4시59분</div>
+            <div class="message-time">오후 4:59</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">보건계열이랑 의료계열인데</div>
-            <div class="message-time">오후 5시00분</div>
+            <div class="message-time">오후 5:00</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">너무 거긴 탑..</div>
-            <div class="message-time">오후 5시07분</div>
+            <div class="message-time">오후 5:07</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">전문대 중에는 공대 아니면 보건계열도 탑은 맞잖아 ㅋㅋㅋ</div>
-            <div class="message-time">오후 5시33분</div>
+            <div class="message-time">오후 5:33</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">와보면 달라ㅜ</div>
-            <div class="message-time">오후 5시40분</div>
+            <div class="message-time">오후 5:40</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 5시41분</div>
+            <div class="message-time">오후 5:41</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">근데 공강 없는건 좀 빡세긴 하네...</div>
-            <div class="message-time">오후 5시41분</div>
+            <div class="message-time">오후 5:41</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그니까</div>
-            <div class="message-time">오후 5시44분</div>
+            <div class="message-time">오후 5:44</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">공강 있었ㄴ느데</div>
-            <div class="message-time">오후 5시44분</div>
+            <div class="message-time">오후 5:44</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">1학기땐</div>
-            <div class="message-time">오후 5시44분</div>
+            <div class="message-time">오후 5:44</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 그래??</div>
-            <div class="message-time">오후 5시44분</div>
+            <div class="message-time">오후 5:44</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">1학기땐 언제였어?</div>
-            <div class="message-time">오후 5시45분</div>
+            <div class="message-time">오후 5:45</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">금공강ㅇ</div>
-            <div class="message-time">오후 5시45분</div>
+            <div class="message-time">오후 5:45</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">근데 갑자기 왜 없앴지</div>
-            <div class="message-time">오후 5시46분</div>
+            <div class="message-time">오후 5:46</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">2학년도 아닌데</div>
-            <div class="message-time">오후 5시46분</div>
+            <div class="message-time">오후 5:46</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">전공이 늘어났어..</div>
-            <div class="message-time">오후 5시48분</div>
+            <div class="message-time">오후 5:48</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아.</div>
-            <div class="message-time">오후 5시48분</div>
+            <div class="message-time">오후 5:48</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그래도</div>
-            <div class="message-time">오후 5시49분</div>
+            <div class="message-time">오후 5:49</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">긍정적이게 접근하면</div>
-            <div class="message-time">오후 5시49분</div>
+            <div class="message-time">오후 5:49</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">배울게 많아졌으니까</div>
-            <div class="message-time">오후 5시49분</div>
+            <div class="message-time">오후 5:49</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">좋지 않을까.......?</div>
-            <div class="message-time">오후 5시49분</div>
+            <div class="message-time">오후 5:49</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 5시51분</div>
+            <div class="message-time">오후 5:51</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">맞긴해</div>
-            <div class="message-time">오후 5시51분</div>
+            <div class="message-time">오후 5:51</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">4년제가 배우는걸</div>
-            <div class="message-time">오후 5시51분</div>
+            <div class="message-time">오후 5:51</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">3년에 끝내야해서</div>
-            <div class="message-time">오후 5시51분</div>
+            <div class="message-time">오후 5:51</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">너흰 전공심화 과정 없어?</div>
-            <div class="message-time">오후 5시52분</div>
+            <div class="message-time">오후 5:52</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">졸업하면 전문학사 말고 학사 인정해주는거</div>
-            <div class="message-time">오후 5시52분</div>
+            <div class="message-time">오후 5:52</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그게 뭐지 ㅎ</div>
-            <div class="message-time">오후 5시56분</div>
+            <div class="message-time">오후 5:56</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">아 없구나</div>
-            <div class="message-time">오후 5시56분</div>
+            <div class="message-time">오후 5:56</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">우리도 없어 근데</div>
-            <div class="message-time">오후 5시56분</div>
+            <div class="message-time">오후 5:56</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">2•3년제인데, +1•2년 더 학교 다니다 졸업하면 4년제랑 학위 똑같이 주는 제도? 라고 해야하나</div>
-            <div class="message-time">오후 5시57분</div>
+            <div class="message-time">오후 5:57</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">나는 ㅃㄹ 졸업하고싶어</div>
-            <div class="message-time">오후 5시57분</div>
+            <div class="message-time">오후 5:57</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 5시57분</div>
+            <div class="message-time">오후 5:57</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">난 재미있는데 학교</div>
-            <div class="message-time">오후 5시57분</div>
+            <div class="message-time">오후 5:57</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">그래서 금공강도 풀수업은 아니더라도 오전이든 오후든 3교시는 했으면 좋겠어</div>
-            <div class="message-time">오후 5시58분</div>
+            <div class="message-time">오후 5:58</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">…???????이게 무슨..</div>
-            <div class="message-time">오후 6시06분</div>
+            <div class="message-time">오후 6:06</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">?? ㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 6시11분</div>
+            <div class="message-time">오후 6:11</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">왜</div>
-            <div class="message-time">오후 6시12분</div>
+            <div class="message-time">오후 6:12</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">고등학교때나 평일이 싫었지</div>
-            <div class="message-time">오후 6시12분</div>
+            <div class="message-time">오후 6:12</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">금토일 사흘씩이나 쉬면 지루해...</div>
-            <div class="message-time">오후 6시12분</div>
+            <div class="message-time">오후 6:12</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋㅋㅋ 난 그게 좋은데</div>
-            <div class="message-time">오후 6시15분</div>
+            <div class="message-time">오후 6:15</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">지루한게...?</div>
-            <div class="message-time">오후 6시15분</div>
+            <div class="message-time">오후 6:15</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">놉</div>
-            <div class="message-time">오후 6시15분</div>
+            <div class="message-time">오후 6:15</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">쉬는게</div>
-            <div class="message-time">오후 6시15분</div>
+            <div class="message-time">오후 6:15</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">나도 학기 초에는 너무 좋았고</div>
-            <div class="message-time">오후 6시16분</div>
+            <div class="message-time">오후 6:16</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">지금도 간혹가다 좋을때도 있긴 있는데</div>
-            <div class="message-time">오후 6시16분</div>
+            <div class="message-time">오후 6:16</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">지금은 장점보다 단점이 더 많아 ㅋㅋㅋㅋㅠ</div>
-            <div class="message-time">오후 6시16분</div>
+            <div class="message-time">오후 6:16</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">즐겨 지금을 ㅜ</div>
-            <div class="message-time">오후 6시19분</div>
+            <div class="message-time">오후 6:19</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 6시19분</div>
+            <div class="message-time">오후 6:19</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">금공강 없는 네가 그렇게 말하면 할 말이 없어지는디..</div>
-            <div class="message-time">오후 6시19분</div>
+            <div class="message-time">오후 6:19</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 찐이다ㅜ</div>
-            <div class="message-time">오후 6시23분</div>
+            <div class="message-time">오후 6:23</div>
         </div>
 
         <div class="message-row sender-yu">
@@ -4585,135 +4387,182 @@
             <div class="message-bubble" style="background-color: #F8F9FA; color: #ffffff; box-shadow: none; border: none; padding: 0; border-radius: 12px; overflow: hidden;">
                 <img src="photo_yu_top.png" alt="story" style="display: block; max-width: 160px; width: 60%; margin-left: auto;">
             </div>
-            <div class="message-time">오후 7시48분</div>
+            <div class="message-time">오후 7:48</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">어떻게 이틀 연속 술이지....</div>
-            <div class="message-time">오후 7시48분</div>
+            <div class="message-time">오후 7:48</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">술이 왜케 많냨ㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 9시13분</div>
+            <div class="message-time">오후 9:13</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 9시15분</div>
+            <div class="message-time">오후 9:15</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble" style="background-color: #F8F9FA; color: #ffffff; box-shadow: none; border: none; padding: 0; border-radius: 12px; overflow: hidden;">
-                <img src="photo_yu_bottom.png" alt="story" style="display: block; max-width: 160px; width: 60%; margin-left: auto;">
+                <img src="photo_yu_middle.png" alt="story" style="display: block; max-width: 160px; width: 60%; margin-left: auto;">
             </div>
-            <div class="message-time">오후 9시15분</div>
+            <div class="message-time">오후 9:15</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">2차 또 옴...;;</div>
-            <div class="message-time">오후 9시15분</div>
+            <div class="message-time">오후 9:15</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅆㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 10시15분</div>
+            <div class="message-time">오후 10:15</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">이러다 3차도 갈듯</div>
-            <div class="message-time">오후 10시15분</div>
+            <div class="message-time">오후 10:15</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">절대 못감 ㅋㅋㅋ</div>
-            <div class="message-time">오후 10시21분</div>
+            <div class="message-time">오후 10:21</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">지금 2차에서만 2시간 넘게 있는거 같은데</div>
-            <div class="message-time">오후 10시21분</div>
+            <div class="message-time">오후 10:21</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋㅋㅋ술 다 깨겠다</div>
-            <div class="message-time">오후 10시30분</div>
+            <div class="message-time">오후 10:30</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 10시53분</div>
+            <div class="message-time">오후 10:53</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">1차 2차 둘다</div>
-            <div class="message-time">오후 10시57분</div>
+            <div class="message-time">오후 10:57</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">합쳐서 31만원 나왔음;;</div>
-            <div class="message-time">오후 10시57분</div>
+            <div class="message-time">오후 10:57</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">.? 몇명인데.?</div>
-            <div class="message-time">오후 10시59분</div>
+            <div class="message-time">오후 10:59</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">6명 ㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 11시03분</div>
+            <div class="message-time">오후 11:03</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">1차 2차 합쳐서 맥주만 18병 먹은거 같은데</div>
-            <div class="message-time">오후 11시14분</div>
+            <div class="message-time">오후 11:14</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">엥??? 맥주를.?</div>
-            <div class="message-time">오후 11시21분</div>
+            <div class="message-time">오후 11:21</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">응 ㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 11시22분</div>
+            <div class="message-time">오후 11:22</div>
         </div>
 
         <div class="message-row sender-sua">
             <div class="message-sender">수아</div>
             <div class="message-bubble">그정도면 맥주도 겁나 취하겠다</div>
-            <div class="message-time">오후 11시24분</div>
+            <div class="message-time">오후 11:24</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">ㅋㅋㅋㅋㅋㅋ</div>
-            <div class="message-time">오후 11시25분</div>
+            <div class="message-time">오후 11:25</div>
         </div>
 
         <div class="message-row sender-yu">
             <div class="message-sender">신유수</div>
             <div class="message-bubble">어제만큼은 아녀도 좀 어지럽긴 한데 지금은 조금 깨긴한거 같아</div>
-            <div class="message-time">오후 11시26분</div>
+            <div class="message-time">오후 11:26</div>
+        </div>
+
+        <div class="date-divider">
+            <span class="line"></span>
+            <span class="date-text">2026년 9월 11일</span>
+            <span class="line"></span>
+        </div>
+
+        <div class="message-row sender-sua">
+            <div class="message-sender">수아</div>
+            <div class="message-bubble">이제 그만 마셬ㅋㅋㅋㅋㅋ</div>
+            <div class="message-time">오전 12:11</div>
+        </div>
+
+        <div class="message-row sender-yu">
+            <div class="message-sender">신유수</div>
+            <div class="message-bubble">이미 집이야 ㅋㅋㅋ</div>
+            <div class="message-time">오전 12:20</div>
+        </div>
+
+        <div class="message-row sender-yu">
+            <div class="message-sender">신유수</div>
+            <div class="message-bubble">한 40분 전에 도착한거 같은데</div>
+            <div class="message-time">오전 12:21</div>
+        </div>
+
+        <div class="message-row sender-sua">
+            <div class="message-sender">수아</div>
+            <div class="message-bubble">이제 자야지 ㅜ</div>
+            <div class="message-time"></div>
+        </div>
+        <div class="message-row sender-sua">
+            <div class="message-sender"></div>
+            <div class="message-bubble">개졸려ㅜㅜㅋㅋㅋㅋㅋ</div>
+            <div class="message-time">오전 12:30</div>
+        </div>
+
+        <div class="message-row sender-yu">
+            <div class="message-sender">신유수</div>
+            <div class="message-bubble">ㅋㅋㅋㅋㅋㅋ</div>
+            <div class="message-time">오전 12:30</div>
+        </div>
+
+        <div class="message-row sender-yu">
+            <div class="message-sender">신유수</div>
+            <div class="message-bubble">잘 자</div>
+            <div class="message-time">오전 12:31</div>
         </div>
 
     </div>
