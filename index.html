@@ -4493,5 +4493,12 @@
 
     </div>
 </div>
+    <script>
+document.addEventListener('click', () => {
+    const el = document.documentElement;
+    if (el.requestFullscreen) el.requestFullscreen();
+    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+});
+    </script>
 </body>
 </html>
