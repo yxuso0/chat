@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>메신저 대화</title>
     <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     html, body {
@@ -45,11 +45,12 @@
 
     .chat-header {
         background: #ffffff;
-        padding: 12px 24px;
+        padding: 15px;
+        padding-bottom: 7px;
         border-bottom: 1px solid #e0e0e0;
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
         flex-shrink: 0;
     }
 
@@ -63,6 +64,36 @@
         font-size: 13px;
         color: #65676b;
         margin-left: auto;
+    }
+
+    /* ===== 프로필 이미지 / 유저 정보 ===== */
+    .profile-img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: #e4e6eb;
+        flex-shrink: 0;
+    }
+
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+    }
+
+    .user-name {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1d2129;
+        line-height: 0.9;
+    }
+
+    .user-id {
+        font-size: 13px;
+        color: #808080;
+        line-height: 1.2;
     }
 
     .chat-messages {
@@ -249,13 +280,16 @@
             font-size: 11px;
         }
     }
-    </style>
+</style>
 </head>
 <body>
 <div class="chat-container">
     <div class="chat-header">
-        <h1><img src="https://toppng.com/uploads/preview/instagram-default-profile-picture-11562973083brycehrmyv.png" width="8%" height="8%" style="border-radius: 50%; position: relative; top: 5px;"><span style="position: relative; top: -27px; font-size: 20px;">&nbsp;&nbsp;수아</span><br><span style="position: relative; top: -33px; margin-left: 62px; font-weight: 360; -webkit-text-fill-color: #808080;">&nbsp;&nbsp;sua_rrrr</span></h1>
-        <span class="subtitle"> </span>
+    <img src="https://toppng.com/uploads/preview/instagram-default-profile-picture-11562973083brycehrmyv.png" class="profile-img">
+    <div class="user-info">
+        <div class="user-name">수아</div>
+        <div class="user-id">&nbsp;sua_rrrr</div>
+        </div>
     </div>
     <div class="chat-messages">
         <!-- ===== 2026년 7월 31일 ===== -->
