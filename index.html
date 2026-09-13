@@ -5,281 +5,287 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>메신저 대화</title>
     <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    html, body {
-        height: 100dvh;
-        overflow: hidden; /* 외부(페이지) 스크롤 제거 */
-    }
+html, body {
+    height: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-        background: none;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: stretch;
-        height: 100dvh;
-        padding: 0;
-    }
+body {
+    background: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0;
+    /* iOS 노치 / 홈바 대응 */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
 
+.chat-container {
+    max-width: 800px;
+    width: 100%;
+    background-color: #f0f2f5;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    max-height: 100dvh;   /* 100vh → 100dvh 로 변경 */
+    padding: 0 10px;
+}
+
+.chat-header {
+    background: #ffffff;
+    padding: 15px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.chat-header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d2129;
+}
+
+.chat-header .subtitle {
+    font-size: 13px;
+    color: #65676b;
+    margin-left: auto;
+}
+
+/* ===== 프로필 이미지 / 유저 정보 ===== */
+.profile-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e4e6eb;
+    flex-shrink: 0;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.user-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d2129;
+    line-height: 0.9;
+}
+
+.user-id {
+    font-size: 13px;
+    color: #808080;
+    line-height: 1.2;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: #f8f9fa;
+}
+
+.date-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px 0 8px 0;
+    gap: 12px;
+}
+.date-divider .line {
+    flex: 1;
+    height: 1px;
+    background: #d0d4d9;
+}
+.date-divider .date-text {
+    background: #f0f2f5;
+    padding: 0 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #4b4f56;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.message-row {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.message-row.sender-sua {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+.sender-sua .message-bubble {
+    background-color: #e9ecef;
+    border-top-left-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+.message-row.sender-yu {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+.sender-yu .message-bubble {
+    background-color: #5950F9;
+    color: #ffffff;
+    border-top-right-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+.sender-yu .message-bubble a {
+    color: #d4d9ff;
+    text-decoration: none;
+}
+.sender-yu .message-bubble a:hover {
+    text-decoration: underline;
+}
+
+.message-bubble {
+    padding: 10px 14px;
+    border-radius: 18px;
+    word-break: break-word;
+    line-height: 1.5;
+    font-size: 15px;
+    color: #1c1e21;
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.message-sender {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    padding-left: 6px;
+    color: #1d2129;
+}
+
+.sender-sua .message-sender {
+    padding-right: 6px;
+    text-align: left;
+}
+.sender-yu .message-sender {
+    text-align: right;
+    padding-right: 6px;
+    color: #2b2b2b;
+}
+
+.message-time {
+    font-size: 11px;
+    color: #000000;
+    margin-top: 2px;
+    padding: 0 6px;
+}
+.sender-yu .message-time {
+    color: #000000;
+}
+
+.image-placeholder {
+    background: #e4e6eb;
+    border-radius: 12px;
+    padding: 6px;
+    border: 1px dashed #b0b3b8;
+    display: inline-block;
+    line-height: 0;
+    margin-top: 0;
+}
+
+.image-placeholder img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 280px;
+    border-radius: 8px;
+}
+
+.message-link {
+    color: #385898;
+    text-decoration: none;
+    word-break: break-all;
+}
+.message-link:hover {
+    text-decoration: underline;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 10px;
+}
+.chat-messages::-webkit-scrollbar-track {
+    background: #e9ecef;
+    border-radius: 10px;
+}
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #b0b8c1;
+    border-radius: 10px;
+    border: 2px solid #f8f9fa;
+}
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #9aa3ad;
+}
+
+@media (max-width: 600px) {
     .chat-container {
-        max-width: 800px;
-        width: 100%;
-        background-color: #f0f2f5;
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
         height: 100dvh;
-        max-height: 100vh;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        padding-left: 10px;
-        padding-right: 10px;
+        max-height: 100dvh;   /* 100vh → 100dvh 로 변경 */
+        border-radius: 0;
+        padding: 0;
+        /* 노치 / 홈바 영역까지 확장 */
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
     }
-
     .chat-header {
-        background: #ffffff;
-        padding: 15px;
-        padding-bottom: 15px;
-        border-bottom: 3px solid #e0e0e0;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex-shrink: 0;
+        padding: 14px 16px;
+        padding-top: calc(14px + env(safe-area-inset-top));
     }
-
+    .chat-messages {
+        padding: 12px 14px;
+    }
+    .message-row {
+        max-width: 90%;
+    }
     .chat-header h1 {
         font-size: 20px;
-        font-weight: 700;
-        color: #1d2129;
     }
-
-    .chat-header .subtitle {
-        font-size: 13px;
-        color: #65676b;
-        margin-left: auto;
-    }
-
-    /* ===== 프로필 이미지 / 유저 정보 ===== */
-    .profile-img {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        object-fit: cover;
-        background: #e4e6eb;
-        flex-shrink: 0;
-    }
-
-    .user-info {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        min-width: 0;
-    }
-
-    .user-name {
-        font-size: 20px;
-        font-weight: 700;
-        color: #1d2129;
-        line-height: 0.9;
-    }
-
-    .user-id {
-        font-size: 13px;
-        color: #808080;
-        line-height: 1.2;
-    }
-
-    .chat-messages {
-        flex: 1;
-        overflow-y: auto; /* 대화창 내부 스크롤만 유지 */
-        padding: 16px 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        background: #f8f9fa;
-    }
-
-    .date-divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 12px 0 8px 0;
-        gap: 12px;
-    }
-    .date-divider .line {
-        flex: 1;
-        height: 1px;
-        background: #d0d4d9;
+    .image-placeholder img {
+        max-width: 280px;
     }
     .date-divider .date-text {
-        background: #f0f2f5;
-        padding: 0 12px;
         font-size: 13px;
-        font-weight: 500;
-        color: #4b4f56;
-        letter-spacing: 0.3px;
-        white-space: nowrap;
     }
-
-    .message-row {
-        display: flex;
-        flex-direction: column;
-        max-width: 80%;
-    }
-
-    .message-row.sender-sua {
-        align-self: flex-start;
-        align-items: flex-start;
-    }
-    .sender-sua .message-bubble {
-        background-color: #e9ecef;
-        border-top-left-radius: 4px;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.08);
-    }
-
-    .message-row.sender-yu {
-        align-self: flex-end;
-        align-items: flex-end;
-    }
-    .sender-yu .message-bubble {
-        background-color: #5950F9;
-        color: #ffffff;
-        border-top-right-radius: 4px;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-    }
-    .sender-yu .message-bubble a {
-        color: #d4d9ff;
-        text-decoration: none;
-    }
-    .sender-yu .message-bubble a:hover {
-        text-decoration: underline;
-    }
-
-    .message-bubble {
-        padding: 10px 14px;
-        border-radius: 18px;
-        word-break: break-word;
-        line-height: 1.5;
-        font-size: 15px;
-        color: #1c1e21;
-        position: relative;
-        display: inline-block;
-        max-width: 100%;
-    }
-
     .message-sender {
         font-size: 13px;
-        font-weight: 600;
-        margin-bottom: 4px;
-        padding-left: 6px;
-        color: #1d2129;
     }
-
-    .sender-sua .message-sender {
-        padding-right: 6px;
-        text-align: left;
+    .message-bubble {
+        font-size: 15px;
     }
-    .sender-yu .message-sender {
-        text-align: right;
-        padding-right: 6px;
-        color: #2b2b2b;
-    }
-
     .message-time {
         font-size: 11px;
-        color: #000000;
-        margin-top: 2px;
-        padding: 0 6px;
     }
-    .sender-yu .message-time {
-        color: #000000;
-    }
-
-    .image-placeholder {
-        background: #e4e6eb;
-        border-radius: 12px;
-        padding: 6px;
-        border: 1px dashed #b0b3b8;
-        display: inline-block;
-        line-height: 0;
-        margin-top: 0;
-    }
-
-    .image-placeholder img {
-        display: block;
-        width: auto;
-        height: auto;
-        max-width: 280px;
-        border-radius: 8px;
-    }
-
-    .message-link {
-        color: #385898;
-        text-decoration: none;
-        word-break: break-all;
-    }
-    .message-link:hover {
-        text-decoration: underline;
-    }
-
-    .chat-messages::-webkit-scrollbar {
-        width: 10px;
-    }
-    .chat-messages::-webkit-scrollbar-track {
-        background: #e9ecef;
-        border-radius: 10px;
-    }
-    .chat-messages::-webkit-scrollbar-thumb {
-        background: #b0b8c1;
-        border-radius: 10px;
-        border: 2px solid #f8f9fa;
-    }
-    .chat-messages::-webkit-scrollbar-thumb:hover {
-        background: #9aa3ad;
-    }
-
-    @media (max-width: 600px) {
-        .chat-container {
-            height: 100vh;
-            max-height: 100vh;
-            border-radius: 0;
-            padding: 0;
-        }
-        .chat-header {
-            padding: 14px 16px;
-        }
-        .chat-messages {
-            padding: 12px 14px;
-        }
-        .message-row {
-            max-width: 90%;
-        }
-        .chat-header h1 {
-            font-size: 20px;
-        }
-        .image-placeholder img {
-            max-width: 280px;
-        }
-        .date-divider .date-text {
-            font-size: 13px;
-        }
-        .message-sender {
-            font-size: 13px;
-        }
-        .message-bubble {
-            font-size: 15px;
-        }
-        .message-time {
-            font-size: 11px;
-        }
-    }
+}
 </style>
 </head>
 <body>
@@ -4298,11 +4304,25 @@
     </div>
 </div>
     <script>
-document.addEventListener('click', () => {
-    const el = document.documentElement;
-    if (el.requestFullscreen) el.requestFullscreen();
-    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-});
+    document.addEventListener('click', () => {
+        const el = document.documentElement;
+        const isFs = document.fullscreenElement || document.webkitFullscreenElement;
+        if (!isFs) {
+            if (el.requestFullscreen) el.requestFullscreen({ navigationUI: "hide" });
+            else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+        }
+    });
+
+    // 전체화면 상태 변화 감지 → 100dvh 재계산 트리거
+    ['fullscreenchange', 'webkitfullscreenchange'].forEach(evt => {
+        document.addEventListener(evt, () => {
+            // 강제 리플로우로 dvh 재계산
+            document.body.style.height = '100dvh';
+            requestAnimationFrame(() => {
+                document.body.style.height = '';
+            });
+        });
+    });
     </script>
 </body>
 </html>
